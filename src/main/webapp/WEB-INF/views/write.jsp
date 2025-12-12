@@ -47,7 +47,7 @@
     </p>
 </form>
 
-<a href="/snaps">목록으로</a>
+<a href="list">목록으로</a>
 </body>
 </html>
 
