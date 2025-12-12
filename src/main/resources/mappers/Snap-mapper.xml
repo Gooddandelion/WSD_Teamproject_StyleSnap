@@ -2,36 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="Board">
-    <insert id="insertBoard">
-        insert into BOARD (title, writer, password, category, content)
-        values (#{title}, #{writer}, #{password}, #{category}, #{content})
+<mapper namespace="snap">
+    <insert id="insertSnap" parameterType="snap">
+        INSERT INTO snaps (user_id, snap_title, image_url, category, style, color, price)
+        VALUES (#{user_id}, #{snap_title}, #{image_url}, #{category}, #{style}, #{color}, #{price})
     </insert>
-    <update id="updateBoard">
-        update BOARD
-        set title=#{title},
-            content=#{content},
-            writer=#{writer},
-            category=#{category}
-        where seq = #{seq}
-    </update>
-    <delete id="deleteBoard">
-        delete
-        from BOARD
-        where seq = #{seq}
-    </delete>
-    <select id="getBoard" resultType="board">
-        select *
-        from BOARD
-        where seq = #{seq}
-    </select>
-    <select id="getBoardCnt" resultType="Integer">
-        select count(*)
-        from BOARD
-    </select>
-    <select id="getBoardList" resultType="board">
-        select *
-        from BOARD
-        order by seq desc
-    </select>
+
+
 </mapper>
