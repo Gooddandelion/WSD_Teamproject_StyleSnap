@@ -55,4 +55,10 @@ public class SnapController {
         snapDAO.updateSnap(snapVO);
         return "redirect:/snaps/list";
     }
+
+    @GetMapping("/delete/{id}")
+    public String deleteSnap(@PathVariable("id") int id) {
+        snapDAO.deleteSnap(id);
+        return "redirect:/snaps/list";
+    }
 }

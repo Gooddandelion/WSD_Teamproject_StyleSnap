@@ -26,4 +26,8 @@ public class SnapDAO {
     public int updateSnap(SnapVO snapVO) {
         return sqlSession.update("snap.updateSnap", snapVO);
     }
+
+    public int deleteSnap(int snap_id) {
+        return sqlSession.delete("snap.deleteSnap", snap_id);
+    }
 }
