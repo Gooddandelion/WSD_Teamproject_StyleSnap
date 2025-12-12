@@ -8,5 +8,8 @@
         VALUES (#{user_id}, #{snap_title}, #{image_url}, #{category}, #{style}, #{color}, #{price})
     </insert>
 
+    <select id="getSnapList" resultType="snap">
+        SELECT * FROM snaps ORDER BY snap_id DESC
+    </select>
 
 </mapper>
