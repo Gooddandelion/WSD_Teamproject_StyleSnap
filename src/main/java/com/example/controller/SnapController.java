@@ -32,7 +32,7 @@ public class SnapController {
     public String writeSnapOk(SnapVO snapVO) {
         snapVO.setUser_id(1);  // 임시로 user_id 고정 (로그인 구현 전)
         snapDAO.insertSnap(snapVO);
-        return "redirect:/snaps";
+        return "redirect:/snaps/list";
     }
 
     @GetMapping("/list")
