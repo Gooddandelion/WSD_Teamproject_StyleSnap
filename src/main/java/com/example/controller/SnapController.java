@@ -33,4 +33,10 @@ public class SnapController {
         snapDAO.insertSnap(snapVO);
         return "redirect:/snaps";
     }
+
+    @GetMapping("/list")
+    public String snapList(Model model) {
+        model.addAttribute("list", snapDAO.getSnapList());
+        return "list";
+    }
 }
