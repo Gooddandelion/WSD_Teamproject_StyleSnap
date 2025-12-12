@@ -12,4 +12,19 @@
         SELECT * FROM snaps ORDER BY snap_id DESC
     </select>
 
+    <select id="getSnap" resultType="snap">
+        SELECT * FROM snaps WHERE snap_id = #{snap_id}
+    </select>
+
+    <update id="updateSnap">
+        UPDATE snaps SET
+                         snap_title = #{snap_title},
+                         image_url = #{image_url},
+                         category = #{category},
+                         style = #{style},
+                         color = #{color},
+                         price = #{price}
+        WHERE snap_id = #{snap_id}
+    </update>
+
 </mapper>

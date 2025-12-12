@@ -18,4 +18,12 @@ public class SnapDAO {
     public List<SnapVO> getSnapList() {
         return sqlSession.selectList("snap.getSnapList");
     }
+
+    public SnapVO getSnap(int snap_id) {
+        return sqlSession.selectOne("snap.getSnap", snap_id);
+    }
+
+    public int updateSnap(SnapVO snapVO) {
+        return sqlSession.update("snap.updateSnap", snapVO);
+    }
 }
