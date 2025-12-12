@@ -50,3 +50,4 @@
 <a href="/snaps">목록으로</a>
 </body>
 </html>
+
