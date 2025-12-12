@@ -6,14 +6,18 @@
 <body>
 <h1>스냅 작성</h1>
 
-<form action="/snaps/write" method="post">
+<form action="write" method="post" enctype="multipart/form-data">
     <p>
         <label>제목</label><br>
         <input type="text" name="snap_title" required>
     </p>
     <p>
-        <label>이미지 URL</label><br>
-        <input type="text" name="image_url" placeholder="이미지 경로 입력">
+        <label>코디 사진</label><br>
+        <input type="file" name="coordFile" accept="image/*" required>
+    </p>
+    <p>
+        <label>상품 사진</label><br>
+        <input type="file" name="productFile" accept="image/*" required>
     </p>
     <p>
         <label>카테고리</label><br>
@@ -47,6 +51,6 @@
     </p>
 </form>
 
-<a href="/snaps">목록으로</a>
+<a href="/snaps/">목록으로</a>
 </body>
 </html>

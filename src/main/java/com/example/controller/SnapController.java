@@ -4,10 +4,16 @@ import com.example.bean.SnapVO;
 import com.example.dao.SnapDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.ServletContext;
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
 
 @Controller
 
@@ -16,6 +22,9 @@ public class SnapController {
 
     @Autowired
     public SnapDAO snapDAO;
+
+    @Autowired
+    private ServletContext servletContext;
 
     @RequestMapping("/")
     public String home() {
@@ -28,9 +37,34 @@ public class SnapController {
     }
 
     @PostMapping("/write")
-    public String writeSnapOk(SnapVO snapVO) {
-        snapVO.setUser_id(1);  // 임시로 user_id 고정 (로그인 구현 전)
+    public String writeSnapOK(SnapVO snapVO,
+                        @RequestParam("coordFile") MultipartFile coordFile,
+                        @RequestParam("productFile") MultipartFile productFile) throws IOException {
+
+        // 업로드 경로 설정
+        String uploadPath = servletContext.getRealPath("/resources/img/uploads/");
+        File uploadDir = new File(uploadPath);
+        if (!uploadDir.exists()) {
+            uploadDir.mkdirs();
+        }
+
+        // 코디 이미지 저장
+        if (!coordFile.isEmpty()) {
+            String coordFileName = UUID.randomUUID() + "_" + coordFile.getOriginalFilename();
+            coordFile.transferTo(new File(uploadPath + coordFileName));
+            snapVO.setCoord_image("/resources/img/uploads/" + coordFileName);
+        }
+
+        // 상품 이미지 저장
+        if (!productFile.isEmpty()) {
+            String productFileName = UUID.randomUUID() + "_" + productFile.getOriginalFilename();
+            productFile.transferTo(new File(uploadPath + productFileName));
+            snapVO.setProduct_image("/resources/img/uploads/" + productFileName);
+        }
+
+        snapVO.setUser_id(1);  // 임시 user_id
         snapDAO.insertSnap(snapVO);
-        return "redirect:/snaps";
+
+        return "redirect:/snaps/";
     }
 }

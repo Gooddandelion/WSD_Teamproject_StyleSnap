@@ -4,8 +4,8 @@
 
 <mapper namespace="snap">
     <insert id="insertSnap" parameterType="snap">
-        INSERT INTO snaps (user_id, snap_title, image_url, category, style, color, price)
-        VALUES (#{user_id}, #{snap_title}, #{image_url}, #{category}, #{style}, #{color}, #{price})
+        INSERT INTO snaps (user_id, snap_title, coord_image, product_image, category, style, color, price)
+        VALUES (#{user_id}, #{snap_title}, #{coord_image}, #{product_image}, #{category}, #{style}, #{color}, #{price})
     </insert>
 
 
