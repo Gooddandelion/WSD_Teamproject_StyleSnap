@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.bean.SnapVO;
+import com.example.bean.UserVO;
 import com.example.dao.SnapDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
@@ -30,18 +32,27 @@ public class SnapController {
 
     @RequestMapping("/")
     public String home() {
-        return "index";
+        return "/snaps/index";
     }
 
     @GetMapping("/write")
     public String writeSnap() {
-        return "write";
+        return "/snaps/write";
     }
 
     @PostMapping("/write")
     public String writeSnapOK(SnapVO snapVO,
-                        @RequestParam("coordFile") MultipartFile coordFile,
-                        @RequestParam("productFile") MultipartFile productFile) throws IOException {
+                              @RequestParam("coordFile") MultipartFile coordFile,
+                              @RequestParam("productFile") MultipartFile productFile,
+                              HttpSession httpSession) throws IOException {
+
+        UserVO loginUser = (UserVO) httpSession.getAttribute("loginUser");
+        if (loginUser == null) {
+            return "redirect:/users/login";
+        }
+
+        // 로그인한 유저의 id 사용
+        snapVO.setUser_id(loginUser.getUser_id());
 
         // 업로드 경로 설정
         String uploadPath = servletContext.getRealPath("/resources/img/uploads/");
@@ -64,7 +75,6 @@ public class SnapController {
             snapVO.setProduct_image("/resources/img/uploads/" + productFileName);
         }
 
-        snapVO.setUser_id(1);  // 임시 user_id
         snapDAO.insertSnap(snapVO);
 
         return "redirect:/snaps/";
@@ -73,14 +83,14 @@ public class SnapController {
     @GetMapping("/list")
     public String snapList(Model model) {
         model.addAttribute("list", snapDAO.getSnapList());
-        return "list";
+        return "/snaps/list";
     }
 
     @GetMapping("/view/{id}")
     public String viewSnap(@PathVariable("id") int id, Model model) {
         snapDAO.countSnap(id);
         model.addAttribute("snap", snapDAO.getSnap(id));
-        return "view";
+        return "/snaps/view";
     }
 
     // 1. 수정 페이지로 이동 (기존 데이터 들고 감)
@@ -88,7 +98,7 @@ public class SnapController {
     public String editSnap(@PathVariable("id") int id, Model model) {
         SnapVO snapVO = snapDAO.getSnap(id);
         model.addAttribute("u", snapVO);
-        return "edit";
+        return "/snaps/edit";
     }
 
     // 2. 수정 완료 (DB 업데이트 후 목록으로 이동)

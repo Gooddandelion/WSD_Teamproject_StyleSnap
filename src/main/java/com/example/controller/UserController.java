@@ -39,9 +39,9 @@ public class UserController {
 
         if (loginUser != null) {
             session.setAttribute("loginUser", loginUser);
-            return "/snaps/list";
+            return "redirect:/snaps/list";
         } else {
-            return "/users/login?error=true";
+            return "redirect:/users/login?error=true";
         }
     }
 

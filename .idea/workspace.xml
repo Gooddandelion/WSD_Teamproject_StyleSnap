@@ -9,8 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="feat: (User) create login.jsp">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp" afterDir="false" />
+    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: (User) update login.jsp">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +217,7 @@
       <workItem from="1765384564309" duration="150000" />
       <workItem from="1765445731765" duration="5957000" />
       <workItem from="1765472768743" duration="324000" />
-      <workItem from="1765607395971" duration="6244000" />
+      <workItem from="1765607395971" duration="6891000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setting project">
       <option name="closed" value="true" />
@@ -313,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765631517725</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix: (User) update login.jsp">
+      <option name="closed" value="true" />
+      <created>1765631844431</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1765631844431</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,6 +356,7 @@
     <MESSAGE value="feat: (User) create signup.jsp" />
     <MESSAGE value="feat: (User) create signup.jsp" />
     <MESSAGE value="feat: (User) create login.jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: (User) create login.jsp" />
+    <MESSAGE value="fix: (User) update login.jsp" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: (User) update login.jsp" />
   </component>
 </project>
