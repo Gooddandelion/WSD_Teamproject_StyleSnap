@@ -19,7 +19,8 @@
     <update id="updateSnap">
         UPDATE snaps SET
                          snap_title = #{snap_title},
-                         image_url = #{image_url},
+                         coord_image = #{coord_image},
+                         product_image = #{product_image},
                          category = #{category},
                          style = #{style},
                          color = #{color},

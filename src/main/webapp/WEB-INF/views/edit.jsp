@@ -14,8 +14,12 @@
         <input type="text" name="snap_title" value="${u.snap_title}" required>
     </p>
     <p>
-        <label>이미지 URL</label><br>
-        <input type="text" name="image_url" value="${u.image_url}">
+        <label>코디 사진</label><br>
+        <input type="file" name="coordFile" accept="image/*" required>
+    </p>
+    <p>
+        <label>상품 사진</label><br>
+        <input type="file" name="productFile" accept="image/*" required>
     </p>
     <p>
         <label>카테고리 (현재: ${u.category})</label><br>
