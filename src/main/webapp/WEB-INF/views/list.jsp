@@ -22,11 +22,10 @@
         <tr>
             <td>${u.snap_id}</td>
             <td>${u.category}</td>
-            <td>${u.snap_title}</td>
+            <td> <a href="view/${u.snap_id}">${u.snap_title}</a></td>
             <td>${u.style}</td>
             <td>${u.price}</td>
             <td>
-                <a href="edit/${u.snap_id}">수정</a> |
                 <a href="delete/${u.snap_id}">삭제</a>
             </td>
         </tr>

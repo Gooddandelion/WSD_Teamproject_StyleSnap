@@ -76,6 +76,12 @@ public class SnapController {
         return "list";
     }
 
+    @GetMapping("/view/{id}")
+    public String viewSnap(@PathVariable("id") int id, Model model) {
+        model.addAttribute("snap", snapDAO.getSnap(id));
+        return "view";
+    }
+
     // 1. 수정 페이지로 이동 (기존 데이터 들고 감)
     @GetMapping("/edit/{id}")
     public String editSnap(@PathVariable("id") int id, Model model) {
@@ -86,11 +92,29 @@ public class SnapController {
 
     // 2. 수정 완료 (DB 업데이트 후 목록으로 이동)
     @PostMapping("/edit/ok")
-    public String editSnapOk(SnapVO snapVO) {
+    public String editSnapOk(SnapVO snapVO,
+                             @RequestParam("coordFile") MultipartFile coordFile,
+                             @RequestParam("productFile") MultipartFile productFile) throws IOException {
+
+        String uploadPath = servletContext.getRealPath("/resources/img/uploads/");
+
+        // 새 코디 이미지가 있을 때만 교체
+        if (!coordFile.isEmpty()) {
+            String coordFileName = UUID.randomUUID() + "_" + coordFile.getOriginalFilename();
+            coordFile.transferTo(new File(uploadPath + coordFileName));
+            snapVO.setCoord_image("/resources/img/uploads/" + coordFileName);
+        }
+
+        // 새 상품 이미지가 있을 때만 교체
+        if (!productFile.isEmpty()) {
+            String productFileName = UUID.randomUUID() + "_" + productFile.getOriginalFilename();
+            productFile.transferTo(new File(uploadPath + productFileName));
+            snapVO.setProduct_image("/resources/img/uploads/" + productFileName);
+        }
+
         snapDAO.updateSnap(snapVO);
         return "redirect:/snaps/list";
     }
-
     @GetMapping("/delete/{id}")
     public String deleteSnap(@PathVariable("id") int id) {
         snapDAO.deleteSnap(id);
