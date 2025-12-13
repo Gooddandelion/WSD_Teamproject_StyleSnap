@@ -78,6 +78,7 @@ public class SnapController {
 
     @GetMapping("/view/{id}")
     public String viewSnap(@PathVariable("id") int id, Model model) {
+        snapDAO.countSnap(id);
         model.addAttribute("snap", snapDAO.getSnap(id));
         return "view";
     }

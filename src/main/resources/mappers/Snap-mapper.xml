@@ -28,6 +28,12 @@
         WHERE snap_id = #{snap_id}
     </update>
 
+    <update id="countSnap">
+        UPDATE snaps SET
+                        view_count = view_count+1
+        WHERE snap_id = #{snap_id}
+    </update>
+
     <delete id="deleteSnap">
         DELETE FROM snaps WHERE snap_id = #{snap_id}
     </delete>

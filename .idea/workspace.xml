@@ -9,12 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: fix conflict (DB connection)">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view.jsp" afterDir="false" />
+    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="feat: add view.jsp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/SnapDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/SnapDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/Snap-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/Snap-mapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +218,7 @@
       <workItem from="1765384564309" duration="150000" />
       <workItem from="1765445731765" duration="5957000" />
       <workItem from="1765472768743" duration="324000" />
-      <workItem from="1765607395971" duration="654000" />
+      <workItem from="1765607395971" duration="2503000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setting project">
       <option name="closed" value="true" />
@@ -253,7 +252,23 @@
       <option name="project" value="LOCAL" />
       <updated>1765607339542</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix: update edit form ( 사진 누락 문제 해결 )">
+      <option name="closed" value="true" />
+      <created>1765608176331</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1765608176331</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: add view.jsp">
+      <option name="closed" value="true" />
+      <created>1765608191337</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1765608191337</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +292,8 @@
     <MESSAGE value="fix: add fileupload dependency" />
     <MESSAGE value="fix: fix conflict" />
     <MESSAGE value="fix: fix conflict (DB connection)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: fix conflict (DB connection)" />
+    <MESSAGE value="fix: update edit form ( 사진 누락 문제 해결 )" />
+    <MESSAGE value="feat: add view.jsp" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add view.jsp" />
   </component>
 </project>
