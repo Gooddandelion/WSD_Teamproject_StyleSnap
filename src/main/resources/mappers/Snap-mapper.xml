@@ -4,8 +4,8 @@
 
 <mapper namespace="snap">
     <insert id="insertSnap" parameterType="snap">
-        INSERT INTO snaps (user_id, snap_title, coord_image, category, style, color, price)
-        VALUES (#{user_id}, #{snap_title}, #{image_url}, #{category}, #{style}, #{color}, #{price})
+        INSERT INTO snaps (user_id, snap_title, coord_image, product_image, category, style, color, price)
+        VALUES (#{user_id}, #{snap_title}, #{coord_image}, #{product_image}, #{category}, #{style}, #{color}, #{price})
     </insert>
 
     <select id="getSnapList" resultType="snap">
@@ -19,11 +19,18 @@
     <update id="updateSnap">
         UPDATE snaps SET
                          snap_title = #{snap_title},
-                         image_url = #{image_url},
+                         coord_image = #{coord_image},
+                         product_image = #{product_image},
                          category = #{category},
                          style = #{style},
                          color = #{color},
                          price = #{price}
+        WHERE snap_id = #{snap_id}
+    </update>
+
+    <update id="countSnap">
+        UPDATE snaps SET
+                        view_count = view_count+1
         WHERE snap_id = #{snap_id}
     </update>
 

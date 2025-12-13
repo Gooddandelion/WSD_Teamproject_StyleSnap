@@ -30,4 +30,6 @@ public class SnapDAO {
     public int deleteSnap(int snap_id) {
         return sqlSession.delete("snap.deleteSnap", snap_id);
     }
+
+    public int countSnap(int snap_id) {return sqlSession.update("snap.countSnap", snap_id); }
 }

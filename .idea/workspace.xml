@@ -9,13 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="feat: setting project">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/write.jsp" afterDir="false" />
+    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: (User) update login.jsp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bean/SnapVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bean/SnapVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/SnapDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/SnapDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/Snap-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/Snap-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,10 +37,11 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -87,8 +85,9 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Tomcat 서버.Tomcat 9.0.107.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat 서버.Tomcat 9.0.111.executor&quot;: &quot;Run&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;heonil&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -104,13 +103,13 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
       <recent name="$PROJECT_DIR$/src/main/resources/mappers" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.107" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.107" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.111" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.111" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Spring1:war exploded">
@@ -120,7 +119,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="9fc424c1-8737-49d5-a247-d2c750a5e990" />
+        <option name="BASE_DIRECTORY_NAME" value="c1913eb3-d243-4f43-b650-4c59f89fe893" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -128,7 +127,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="53972" />
+        <option name="DEBUG_PORT" value="56528" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -218,6 +217,7 @@
       <workItem from="1765384564309" duration="150000" />
       <workItem from="1765445731765" duration="5957000" />
       <workItem from="1765472768743" duration="324000" />
+      <workItem from="1765607395971" duration="6891000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setting project">
       <option name="closed" value="true" />
@@ -227,7 +227,103 @@
       <option name="project" value="LOCAL" />
       <updated>1765450701940</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix: add fileupload dependency">
+      <option name="closed" value="true" />
+      <created>1765503995848</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765503995848</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix: fix conflict">
+      <option name="closed" value="true" />
+      <created>1765606002302</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765606002302</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix: fix conflict (DB connection)">
+      <option name="closed" value="true" />
+      <created>1765607339542</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1765607339542</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix: update edit form ( 사진 누락 문제 해결 )">
+      <option name="closed" value="true" />
+      <created>1765608176331</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1765608176331</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: add view.jsp">
+      <option name="closed" value="true" />
+      <created>1765608191337</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1765608191337</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: add view_count function">
+      <option name="closed" value="true" />
+      <created>1765626617346</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1765626617347</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: (User) create UserVO">
+      <option name="closed" value="true" />
+      <created>1765627004314</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1765627004314</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: (User) create User-mapper.xml">
+      <option name="closed" value="true" />
+      <created>1765627173997</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1765627173997</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: (User) create UserDAO">
+      <option name="closed" value="true" />
+      <created>1765627531296</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1765627531296</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: (User) create login.jsp">
+      <option name="closed" value="true" />
+      <created>1765631487808</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1765631487808</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: (User) create login.jsp">
+      <option name="closed" value="true" />
+      <created>1765631517725</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1765631517725</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix: (User) update login.jsp">
+      <option name="closed" value="true" />
+      <created>1765631844431</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1765631844431</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +344,19 @@
     <MESSAGE value="Changes" />
     <MESSAGE value="Update web.xml" />
     <MESSAGE value="feat: setting project" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: setting project" />
+    <MESSAGE value="fix: add fileupload dependency" />
+    <MESSAGE value="fix: fix conflict" />
+    <MESSAGE value="fix: fix conflict (DB connection)" />
+    <MESSAGE value="fix: update edit form ( 사진 누락 문제 해결 )" />
+    <MESSAGE value="feat: add view.jsp" />
+    <MESSAGE value="feat: add view_count function" />
+    <MESSAGE value="feat: (User) create UserVO" />
+    <MESSAGE value="feat: (User) create User-mapper.xml" />
+    <MESSAGE value="feat: (User) create UserDAO" />
+    <MESSAGE value="feat: (User) create signup.jsp" />
+    <MESSAGE value="feat: (User) create signup.jsp" />
+    <MESSAGE value="feat: (User) create login.jsp" />
+    <MESSAGE value="fix: (User) update login.jsp" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: (User) update login.jsp" />
   </component>
 </project>

@@ -4,7 +4,8 @@ public class SnapVO {
     private int snap_id;
     private int user_id;
     private String snap_title;
-    private String image_url;
+    private String coord_image;      // 코디 사진
+    private String product_image;    // 상품 사진
     private String category;
     private String style;
     private String color;
@@ -15,11 +16,12 @@ public class SnapVO {
 
     public SnapVO() {}
 
-    public SnapVO(int snap_id , int user_id , String snap_title , String image_url , String category , String style , String color , int price , int view_count , int like_count , String created_at) {
+    public SnapVO(int snap_id , int user_id , String coord_image, String product_image, String image_url , String category , String style , String color , int price , int view_count , int like_count , String created_at) {
         this.snap_id = snap_id;
         this.user_id = user_id;
         this.snap_title = snap_title;
-        this.image_url = image_url;
+        this.coord_image = coord_image;
+        this.product_image = product_image;
         this.category = category;
         this.style = style;
         this.color = color;
@@ -27,6 +29,7 @@ public class SnapVO {
         this.view_count = view_count;
         this.like_count = like_count;
         this.created_at = created_at;
+
     }
 
     public int getSnap_id() {
@@ -53,12 +56,20 @@ public class SnapVO {
         this.snap_title = snap_title;
     }
 
-    public String getImage_url() {
-        return image_url;
+    public String getCoord_image() {
+        return coord_image;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
+    public void setCoord_image(String coord_image) {
+        this.coord_image = coord_image;
+    }
+
+    public String getProduct_image() {
+        return product_image;
+    }
+
+    public void setProduct_image(String product_image) {
+        this.product_image = product_image;
     }
 
     public String getCategory() {

@@ -6,5 +6,6 @@
 <configuration>
     <typeAliases>
         <typeAlias alias="snap" type="com.example.bean.SnapVO"/>
+        <typeAlias alias="user" type="com.example.bean.UserVO"/>
     </typeAliases>
 </configuration>
