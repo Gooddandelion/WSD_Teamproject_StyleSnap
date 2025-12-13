@@ -4,9 +4,30 @@
 
 <mapper namespace="snap">
     <insert id="insertSnap" parameterType="snap">
-        INSERT INTO snaps (user_id, snap_title, image_url, category, style, color, price)
+        INSERT INTO snaps (user_id, snap_title, coord_image, category, style, color, price)
         VALUES (#{user_id}, #{snap_title}, #{image_url}, #{category}, #{style}, #{color}, #{price})
     </insert>
 
+    <select id="getSnapList" resultType="snap">
+        SELECT * FROM snaps ORDER BY snap_id DESC
+    </select>
 
+    <select id="getSnap" resultType="snap">
+        SELECT * FROM snaps WHERE snap_id = #{snap_id}
+    </select>
+
+    <update id="updateSnap">
+        UPDATE snaps SET
+                         snap_title = #{snap_title},
+                         image_url = #{image_url},
+                         category = #{category},
+                         style = #{style},
+                         color = #{color},
+                         price = #{price}
+        WHERE snap_id = #{snap_id}
+    </update>
+
+    <delete id="deleteSnap">
+        DELETE FROM snaps WHERE snap_id = #{snap_id}
+    </delete>
 </mapper>

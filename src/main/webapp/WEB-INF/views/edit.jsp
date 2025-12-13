@@ -1,22 +1,24 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>스냅 작성</title>
+    <title>스냅 수정</title>
 </head>
 <body>
-<h1>스냅 작성</h1>
+<h1>스냅 수정</h1>
 
-<form action="/snaps/write" method="post">
+<form action="${pageContext.request.contextPath}/snaps/edit/ok" method="post">
+    <input type="hidden" name="snap_id" value="${u.snap_id}">
+
     <p>
         <label>제목</label><br>
-        <input type="text" name="snap_title" required>
+        <input type="text" name="snap_title" value="${u.snap_title}" required>
     </p>
     <p>
         <label>이미지 URL</label><br>
-        <input type="text" name="image_url" placeholder="이미지 경로 입력">
+        <input type="text" name="image_url" value="${u.image_url}">
     </p>
     <p>
-        <label>카테고리</label><br>
+        <label>카테고리 (현재: ${u.category})</label><br>
         <select name="category">
             <option value="상의">상의</option>
             <option value="하의">하의</option>
@@ -26,7 +28,7 @@
         </select>
     </p>
     <p>
-        <label>스타일</label><br>
+        <label>스타일 (현재: ${u.style})</label><br>
         <select name="style">
             <option value="캐주얼">캐주얼</option>
             <option value="스트릿">스트릿</option>
@@ -36,18 +38,17 @@
     </p>
     <p>
         <label>색상</label><br>
-        <input type="text" name="color" placeholder="예: 블랙, 화이트">
+        <input type="text" name="color" value="${u.color}">
     </p>
     <p>
         <label>가격</label><br>
-        <input type="number" name="price" value="0">
+        <input type="number" name="price" value="${u.price}">
     </p>
     <p>
-        <button type="submit">등록</button>
+        <button type="submit">수정 완료</button>
+        <a href="${pageContext.request.contextPath}/snaps/list">취소</a>
     </p>
 </form>
 
-<a href="list">목록으로</a>
 </body>
 </html>
-
