@@ -9,11 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="feat: add view.jsp">
+    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="feat: (User) create UserDAO">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/signup.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/SnapDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/SnapDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/Snap-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/Snap-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/view.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/write.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/write.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,8 +109,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
       <recent name="$PROJECT_DIR$/src/main/resources/mappers" />
     </key>
   </component>
@@ -218,7 +223,7 @@
       <workItem from="1765384564309" duration="150000" />
       <workItem from="1765445731765" duration="5957000" />
       <workItem from="1765472768743" duration="324000" />
-      <workItem from="1765607395971" duration="2503000" />
+      <workItem from="1765607395971" duration="5894000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setting project">
       <option name="closed" value="true" />
@@ -268,7 +273,39 @@
       <option name="project" value="LOCAL" />
       <updated>1765608191337</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: add view_count function">
+      <option name="closed" value="true" />
+      <created>1765626617346</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1765626617347</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: (User) create UserVO">
+      <option name="closed" value="true" />
+      <created>1765627004314</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1765627004314</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: (User) create User-mapper.xml">
+      <option name="closed" value="true" />
+      <created>1765627173997</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1765627173997</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: (User) create UserDAO">
+      <option name="closed" value="true" />
+      <created>1765627531296</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1765627531296</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +331,10 @@
     <MESSAGE value="fix: fix conflict (DB connection)" />
     <MESSAGE value="fix: update edit form ( 사진 누락 문제 해결 )" />
     <MESSAGE value="feat: add view.jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add view.jsp" />
+    <MESSAGE value="feat: add view_count function" />
+    <MESSAGE value="feat: (User) create UserVO" />
+    <MESSAGE value="feat: (User) create User-mapper.xml" />
+    <MESSAGE value="feat: (User) create UserDAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: (User) create UserDAO" />
   </component>
 </project>
