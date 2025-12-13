@@ -12,7 +12,7 @@
         <p class="error">이메일 또는 비밀번호가 일치하지 않습니다.</p>
     </c:if>
 
-    <form action="${pageContext.request.contextPath}/login" method="post">
+    <form action="${pageContext.request.contextPath}/users/login" method="post">
         <p>
             <label>이메일</label>
             <input type="email" name="email" required>

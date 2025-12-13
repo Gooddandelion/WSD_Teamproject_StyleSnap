@@ -9,16 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="feat: (User) create UserDAO">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/signup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/view.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/write.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/write.jsp" afterDir="false" />
+    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="feat: (User) create login.jsp">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +215,7 @@
       <workItem from="1765384564309" duration="150000" />
       <workItem from="1765445731765" duration="5957000" />
       <workItem from="1765472768743" duration="324000" />
-      <workItem from="1765607395971" duration="5894000" />
+      <workItem from="1765607395971" duration="6244000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setting project">
       <option name="closed" value="true" />
@@ -305,7 +297,23 @@
       <option name="project" value="LOCAL" />
       <updated>1765627531296</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: (User) create login.jsp">
+      <option name="closed" value="true" />
+      <created>1765631487808</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1765631487808</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: (User) create login.jsp">
+      <option name="closed" value="true" />
+      <created>1765631517725</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1765631517725</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +343,9 @@
     <MESSAGE value="feat: (User) create UserVO" />
     <MESSAGE value="feat: (User) create User-mapper.xml" />
     <MESSAGE value="feat: (User) create UserDAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: (User) create UserDAO" />
+    <MESSAGE value="feat: (User) create signup.jsp" />
+    <MESSAGE value="feat: (User) create signup.jsp" />
+    <MESSAGE value="feat: (User) create login.jsp" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: (User) create login.jsp" />
   </component>
 </project>
