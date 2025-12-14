@@ -1,17 +1,18 @@
 package com.example.controller;
 
 import com.example.bean.FolderVO;
+import com.example.bean.SnapVO; // 이거 없으면 에러남
 import com.example.bean.UserVO;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.ui.Model; // 이거 없으면 에러남
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.util.HashMap;
-import java.util.List;
+import java.util.List; // 이거 없으면 에러남
 import java.util.Map;
 
 @Controller
@@ -21,7 +22,7 @@ public class FolderController {
     @Autowired
     SqlSession sqlSession;
 
-    // 1. 내 폴더 리스트 가져오기
+    // 1. 내 폴더 리스트 가져오기 (팝업용 + 마이페이지용 공용)
     @GetMapping("/list")
     @ResponseBody
     public List<FolderVO> getFolders(HttpSession session) {
@@ -65,16 +66,33 @@ public class FolderController {
         return "success";
     }
 
-    // [추가] 4. 마이페이지 (내 폴더 리스트 보여주기)
+    // ================= [아래 부분이 추가된 내용] =================
+
+    // 4. 마이페이지 (내 폴더 리스트 보여주기)
     @GetMapping("/my")
     public String myPage(HttpSession session, Model model) {
         UserVO user = (UserVO) session.getAttribute("loginUser");
         if (user == null) return "redirect:/users/login";
 
-        // 내 폴더 목록 가져오기 (기존 쿼리 재사용)
+        // 내 폴더 목록 가져오기
         List<FolderVO> folders = sqlSession.selectList("folder.getFolders", user.getUser_id());
         model.addAttribute("folders", folders);
 
-        return "mypage"; // mypage.jsp로 이동
+        return "mypage";
+    }
+
+    // 5. 폴더 상세 보기 (폴더 안의 사진들)
+    @GetMapping("/view/{folder_id}")
+    public String viewFolder(@PathVariable("folder_id") int folderId, Model model) {
+        // 해당 폴더에 있는 스냅 리스트 가져오기
+        List<SnapVO> list = sqlSession.selectList("folder.getSnapsByFolder", folderId);
+
+        // 폴더 이름 가져오기
+        String folderName = sqlSession.selectOne("folder.getFolderName", folderId);
+
+        model.addAttribute("list", list);
+        model.addAttribute("folderName", folderName);
+
+        return "folder_view";
     }
 }
