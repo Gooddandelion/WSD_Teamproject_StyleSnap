@@ -131,4 +131,33 @@ public class SnapController {
         snapDAO.deleteSnap(id);
         return "redirect:/snaps/list";
     }
+
+    // [추가] 좋아요 기능 (+ 폴더 생성 로직 포함)
+    @GetMapping("/like/{id}")
+    public String likeSnap(@PathVariable("id") int snap_id, HttpSession session) {
+        UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+
+        // 1. 로그인 안 했으면 로그인 창으로 튕기기
+        if (loginUser == null) {
+            return "redirect:/users/login";
+        }
+
+        // 2. 좋아요 수 증가 (DB 처리)
+        snapDAO.likeSnap(snap_id);
+
+        // 3. [보고서 요구사항] 실제 폴더 생성 (webapp/resources/likes/유저ID)
+        String userId = String.valueOf(loginUser.getUser_id());
+        String path = session.getServletContext().getRealPath("/resources/likes/" + userId);
+
+        File folder = new File(path);
+        if (!folder.exists()) {
+            boolean created = folder.mkdirs(); // 실제 폴더 생성
+            if(created) {
+                System.out.println("폴더 생성 성공: " + path);
+            }
+        }
+
+        // 4. 다시 원래 보던 상세 페이지로 돌아가기
+        return "redirect:/snaps/view/" + snap_id;
+    }
 }

@@ -37,4 +37,11 @@
     <delete id="deleteSnap">
         DELETE FROM snaps WHERE snap_id = #{snap_id}
     </delete>
+
+    <update id="likeSnap">
+        UPDATE snaps SET
+            like_count = like_count + 1
+        WHERE snap_id = #{snap_id}
+    </update>
+
 </mapper>
