@@ -5,6 +5,7 @@ import com.example.bean.UserVO;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -62,5 +63,18 @@ public class FolderController {
 
         sqlSession.insert("folder.saveSnap", map);
         return "success";
+    }
+
+    // [추가] 4. 마이페이지 (내 폴더 리스트 보여주기)
+    @GetMapping("/my")
+    public String myPage(HttpSession session, Model model) {
+        UserVO user = (UserVO) session.getAttribute("loginUser");
+        if (user == null) return "redirect:/users/login";
+
+        // 내 폴더 목록 가져오기 (기존 쿼리 재사용)
+        List<FolderVO> folders = sqlSession.selectList("folder.getFolders", user.getUser_id());
+        model.addAttribute("folders", folders);
+
+        return "mypage"; // mypage.jsp로 이동
     }
 }
