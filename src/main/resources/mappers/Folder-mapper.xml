@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="folder">
+    <select id="getFolders" resultType="com.example.bean.FolderVO">
+        SELECT * FROM folders WHERE user_id = #{user_id} ORDER BY folder_id DESC
+    </select>
+
+    <insert id="addFolder" parameterType="com.example.bean.FolderVO">
+        INSERT INTO folders (user_id, folder_name) VALUES (#{user_id}, #{folder_name})
+    </insert>
+
+    <insert id="saveSnap" parameterType="map">
+        INSERT INTO folder_snaps (folder_id, snap_id) VALUES (#{folder_id}, #{snap_id})
+    </insert>
+
+    <select id="getSnapsByFolder" parameterType="int" resultType="com.example.bean.SnapVO">
+        SELECT s.* FROM snaps s
+                            JOIN folder_snaps fs ON s.snap_id = fs.snap_id
+        WHERE fs.folder_id = #{folder_id}
+        ORDER BY fs.saved_at DESC
+    </select>
+
+    <select id="getFolderName" parameterType="int" resultType="String">
+        SELECT folder_name FROM folders WHERE folder_id = #{folder_id}
+    </select>
+
+</mapper>

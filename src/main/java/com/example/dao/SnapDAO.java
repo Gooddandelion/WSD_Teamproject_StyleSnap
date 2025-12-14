@@ -32,4 +32,9 @@ public class SnapDAO {
     }
 
     public int countSnap(int snap_id) {return sqlSession.update("snap.countSnap", snap_id); }
+
+    // [추가] 좋아요 카운트 증가
+    public void likeSnap(int snap_id) {
+        sqlSession.update("snap.likeSnap", snap_id);
+    }
 }

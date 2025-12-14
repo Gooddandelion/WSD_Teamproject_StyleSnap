@@ -7,6 +7,14 @@
 <body>
 
 <h1>Snap List</h1>
+
+<a href="write">✏️ 새 글 작성</a> |
+<a href="${pageContext.request.contextPath}/folder/my">📂 내 보관함</a>
+<a href="${pageContext.request.contextPath}/users/logout" style="float:right; color:red;">로그아웃</a>
+
+<hr/>
+
+<h1>Snap List</h1>
 <a href="write">새 글 작성</a> <hr/>
 
 <table border="1" width="80%">
