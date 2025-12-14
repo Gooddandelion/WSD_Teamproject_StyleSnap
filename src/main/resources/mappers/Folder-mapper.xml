@@ -14,4 +14,16 @@
     <insert id="saveSnap" parameterType="map">
         INSERT INTO folder_snaps (folder_id, snap_id) VALUES (#{folder_id}, #{snap_id})
     </insert>
+
+    <select id="getSnapsByFolder" parameterType="int" resultType="com.example.bean.SnapVO">
+        SELECT s.* FROM snaps s
+                            JOIN folder_snaps fs ON s.snap_id = fs.snap_id
+        WHERE fs.folder_id = #{folder_id}
+        ORDER BY fs.saved_at DESC
+    </select>
+
+    <select id="getFolderName" parameterType="int" resultType="String">
+        SELECT folder_name FROM folders WHERE folder_id = #{folder_id}
+    </select>
+
 </mapper>
