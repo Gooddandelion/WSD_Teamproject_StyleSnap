@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: 오타 수정 &amp; 생성자 파라미터 수정">
+    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: folder alias 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/FolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/FolderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/User-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/User-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/view.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +218,7 @@
       <workItem from="1765445731765" duration="5957000" />
       <workItem from="1765472768743" duration="324000" />
       <workItem from="1765607395971" duration="6891000" />
-      <workItem from="1765732643713" duration="2734000" />
+      <workItem from="1765732643713" duration="3371000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setting project">
       <option name="closed" value="true" />
@@ -340,7 +340,23 @@
       <option name="project" value="LOCAL" />
       <updated>1765784427813</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix: user 기능 (본인 확인 로직 추가)">
+      <option name="closed" value="true" />
+      <created>1765784648053</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1765784648053</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fix: folder alias 추가">
+      <option name="closed" value="true" />
+      <created>1765784858782</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1765784858782</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,6 +404,8 @@
     <MESSAGE value="fix: (User) update login.jsp" />
     <MESSAGE value="fix: pom.xml &#10;&#10;- Java 버전 1.8 → 17 업그레이드 (기획서 명세 반영)&#10;- groupId/artifactId를 stylesnap으로 변경&#10;- 의존성 버전 properties로 통합 관리" />
     <MESSAGE value="fix: 오타 수정 &amp; 생성자 파라미터 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 오타 수정 &amp; 생성자 파라미터 수정" />
+    <MESSAGE value="fix: user 기능 (본인 확인 로직 추가)" />
+    <MESSAGE value="fix: folder alias 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: folder alias 추가" />
   </component>
 </project>
