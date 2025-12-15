@@ -1,0 +1,224 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"FrameworkDetectionExcludesConfiguration\">\n    <file type=\"web\" url=\"file://$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MavenProjectsManager\">\n    <option name=\"originalFiles\">\n      <list>\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 907a82b991755623e04fc8e2544eb63cec2d7546)
++++ b/.idea/misc.xml	(date 1765502582063)
+@@ -11,7 +11,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="corretto-18" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ArtifactsWorkspaceSettings\">\n    <artifacts-to-build>\n      <artifact name=\"Spring1:war exploded\" />\n    </artifacts-to-build>\n  </component>\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"29eb28b9-07cc-456a-b4b9-1766493d9aaf\" name=\"Changes\" comment=\"feat: setting project\">\n      <change afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/write.jsp\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/bean/SnapVO.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/bean/SnapVO.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/controller/HomeController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/dao/SnapDAO.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/dao/SnapDAO.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/mappers/Snap-mapper.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/mappers/Snap-mapper.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"spring-beans.schema\" />\n        <option value=\"package-info\" />\n        <option value=\"Class\" />\n        <option value=\"Jsp File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"PREVIOUS_COMMIT_AUTHORS\">\n      <list>\n        <option value=\"Jang Soyeon &lt;jerry1004@handong.edu&gt;\" />\n      </list>\n    </option>\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;Gooddandelion&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/Gooddandelion/WSD_Teamproject_StyleSnap.git&quot;,\n    &quot;accountId&quot;: &quot;5a3b2fc0-7353-4b87-a8e5-87b81c7d586e&quot;\n  }\n}</component>\n  <component name=\"KubernetesApiPersistence\">{}</component>\n  <component name=\"KubernetesApiProvider\">{\n  &quot;isMigrated&quot;: true\n}</component>\n  <component name=\"LogFilters\">\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\n    <option name=\"FILTER_INFO\" value=\"true\" />\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\n    <option name=\"CUSTOM_FILTER\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 2\n}</component>\n  <component name=\"ProjectId\" id=\"2YOV8fjQsTakAJbhqPWXv9EMYPi\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;Tomcat 서버.Tomcat 9.0.107.executor&quot;: &quot;Run&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.27471265&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views\" />\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources/mappers\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Tomcat 9.0.107\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 9.0.107\" ALTERNATIVE_JRE_ENABLED=\"false\" nameIsGenerated=\"true\">\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\n      <deployment>\n        <artifact name=\"Spring1:war exploded\">\n          <settings>\n            <option name=\"CONTEXT_PATH\" value=\"/\" />\n          </settings>\n        </artifact>\n      </deployment>\n      <server-settings>\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"9fc424c1-8737-49d5-a247-d2c750a5e990\" />\n      </server-settings>\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\n      <predefined_log_file id=\"Tomcat Manager\" />\n      <predefined_log_file id=\"Tomcat Host Manager\" />\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\n      <RunnerSettings RunnerId=\"Debug\">\n        <option name=\"DEBUG_PORT\" value=\"53972\" />\n      </RunnerSettings>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n        <option name=\"BuildArtifacts\" enabled=\"true\">\n          <artifact name=\"Spring1:war exploded\" />\n        </option>\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18\" />\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"29eb28b9-07cc-456a-b4b9-1766493d9aaf\" name=\"Changes\" comment=\"\" />\n      <created>1700396454596</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1700396454596</updated>\n      <workItem from=\"1700396455745\" duration=\"956000\" />\n      <workItem from=\"1765384564309\" duration=\"150000\" />\n      <workItem from=\"1765445731765\" duration=\"5957000\" />\n      <workItem from=\"1765472768743\" duration=\"324000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"feat: setting project\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765450701940</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765450701940</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"2\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Changes\" />\n    <MESSAGE value=\"Update web.xml\" />\n    <MESSAGE value=\"feat: setting project\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"feat: setting project\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 907a82b991755623e04fc8e2544eb63cec2d7546)
++++ b/.idea/workspace.xml	(date 1765504349996)
+@@ -9,13 +9,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="feat: setting project">
+-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/write.jsp" afterDir="false" />
++    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="Changes">
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bean/SnapVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bean/SnapVO.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/SnapDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/SnapDAO.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/Snap-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/Snap-mapper.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -75,33 +71,33 @@
+   &quot;associatedIndex&quot;: 2
+ }</component>
+   <component name="ProjectId" id="2YOV8fjQsTakAJbhqPWXv9EMYPi" />
+-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;Tomcat 서버.Tomcat 9.0.107.executor&quot;: &quot;Run&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.27471265&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "Tomcat 서버.Tomcat 9.0.107.executor": "Run",
++    "Tomcat 서버.Tomcat 9.0.111.executor": "Run",
++    "WebServerToolWindowFactoryState": "false",
++    "git-widget-placeholder": "develop",
++    "kotlin-language-version-configured": "true",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "project.structure.last.edited": "프로젝트",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.27471265",
++    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+@@ -109,8 +105,21 @@
+       <recent name="$PROJECT_DIR$/src/main/resources/mappers" />
+     </key>
+   </component>
+-  <component name="RunManager">
+-    <configuration name="Tomcat 9.0.107" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.107" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
++  <component name="RunDashboard">
++    <option name="configurationStatuses">
++      <map>
++        <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
++          <value>
++            <map>
++              <entry key="Tomcat 9.0.111" value="STOPPED" />
++            </map>
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="RunManager" selected="Tomcat 서버.Tomcat 9.0.111">
++    <configuration name="Tomcat 9.0.107" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.111" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+       <option name="UPDATING_POLICY" value="restart-server" />
+       <deployment>
+         <artifact name="Spring1:war exploded">
+@@ -197,6 +206,97 @@
+         </option>
+       </method>
+     </configuration>
++    <configuration name="Tomcat 9.0.111" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.111" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
++      <option name="UPDATING_POLICY" value="restart-server" />
++      <deployment>
++        <artifact name="Spring1:war exploded">
++          <settings>
++            <option name="CONTEXT_PATH" value="/" />
++          </settings>
++        </artifact>
++      </deployment>
++      <server-settings>
++        <option name="BASE_DIRECTORY_NAME" value="feff635d-d2fa-417c-8720-6e4773465414" />
++      </server-settings>
++      <predefined_log_file enabled="true" id="Tomcat" />
++      <predefined_log_file enabled="true" id="Tomcat Catalina" />
++      <predefined_log_file id="Tomcat Manager" />
++      <predefined_log_file id="Tomcat Host Manager" />
++      <predefined_log_file id="Tomcat Localhost Access" />
++      <RunnerSettings RunnerId="Debug">
++        <option name="DEBUG_PORT" value="50736" />
++      </RunnerSettings>
++      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
++        <option name="USE_ENV_VARIABLES" value="true" />
++        <STARTUP>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </STARTUP>
++        <SHUTDOWN>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </SHUTDOWN>
++      </ConfigurationWrapper>
++      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
++        <option name="USE_ENV_VARIABLES" value="true" />
++        <STARTUP>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </STARTUP>
++        <SHUTDOWN>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </SHUTDOWN>
++      </ConfigurationWrapper>
++      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
++        <option name="USE_ENV_VARIABLES" value="true" />
++        <STARTUP>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </STARTUP>
++        <SHUTDOWN>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </SHUTDOWN>
++      </ConfigurationWrapper>
++      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
++        <option name="USE_ENV_VARIABLES" value="true" />
++        <STARTUP>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </STARTUP>
++        <SHUTDOWN>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </SHUTDOWN>
++      </ConfigurationWrapper>
++      <method v="2">
++        <option name="Make" enabled="true" />
++        <option name="BuildArtifacts" enabled="true">
++          <artifact name="Spring1:war exploded" />
++        </option>
++      </method>
++    </configuration>
++    <list>
++      <item itemvalue="Tomcat 서버.Tomcat 9.0.107" />
++      <item itemvalue="Tomcat 서버.Tomcat 9.0.111" />
++    </list>
+   </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
