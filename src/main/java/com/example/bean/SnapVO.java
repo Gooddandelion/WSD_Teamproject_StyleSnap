@@ -16,7 +16,7 @@ public class SnapVO {
 
     public SnapVO() {}
 
-    public SnapVO(int snap_id , int user_id , String coord_image, String product_image, String image_url , String category , String style , String color , int price , int view_count , int like_count , String created_at) {
+    public SnapVO(int snap_id , int user_id , String snap_title, String coord_image, String product_image, String category , String style , String color , int price , int view_count , int like_count , String created_at) {
         this.snap_id = snap_id;
         this.user_id = user_id;
         this.snap_title = snap_title;

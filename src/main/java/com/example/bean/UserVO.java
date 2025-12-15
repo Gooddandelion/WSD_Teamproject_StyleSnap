@@ -7,17 +7,17 @@ public class UserVO {
     private String password;
     private String nickname;
     private String profile_image;
-    private String craeted_at;
+    private String created_at;
 
     public UserVO() {}
 
-    public UserVO(int user_id , String email , String password , String nickname , String profile_image , String craeted_at) {
+    public UserVO(int user_id , String email , String password , String nickname , String profile_image , String created_at) {
         this.user_id = user_id;
         this.email = email;
         this.password = password;
         this.nickname = nickname;
         this.profile_image = profile_image;
-        this.craeted_at = craeted_at;
+        this.created_at = created_at;
     }
 
     public int getUser_id() {
@@ -60,11 +60,11 @@ public class UserVO {
         this.profile_image = profile_image;
     }
 
-    public String getCraeted_at() {
-        return craeted_at;
+    public String getcreated_at() {
+        return created_at;
     }
 
-    public void setCraeted_at(String craeted_at) {
-        this.craeted_at = craeted_at;
+    public void setcreated_at(String created_at) {
+        this.created_at = created_at;
     }
 }
