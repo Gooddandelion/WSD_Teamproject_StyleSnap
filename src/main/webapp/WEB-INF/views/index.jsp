@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>StyleSnap</title>
+    <title>stylezip</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 <!-- 헤더 -->
 <nav class="navbar navbar-light bg-white sticky-top shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="${pageContext.request.contextPath}/">StyleSnap</a>
+        <a class="navbar-brand" href="${pageContext.request.contextPath}/">stylezip</a>
         <div>
             <a href="${pageContext.request.contextPath}/snaps/list" class="btn btn-link text-dark"><i class="fas fa-search"></i></a>
             <c:choose>
