@@ -10,9 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: folder alias 추가">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,22 +51,22 @@
     &quot;assignee&quot;: &quot;Gooddandelion&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Gooddandelion/WSD_Teamproject_StyleSnap.git",
-    "accountId": "5a3b2fc0-7353-4b87-a8e5-87b81c7d586e"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Gooddandelion/WSD_Teamproject_StyleSnap.git&quot;,
+    &quot;accountId&quot;: &quot;5a3b2fc0-7353-4b87-a8e5-87b81c7d586e&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "Gooddandelion",
-    "repository": "WSD_Teamproject_StyleSnap"
+    &quot;owner&quot;: &quot;Gooddandelion&quot;,
+    &quot;repository&quot;: &quot;WSD_Teamproject_StyleSnap&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -97,7 +99,7 @@
     "Tomcat 서버.Tomcat 9.0.107.executor": "Run",
     "Tomcat 서버.Tomcat 9.0.111.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "heonil",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -113,8 +115,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps" />
       <recent name="$PROJECT_DIR$/src/main/resources/mappers" />
     </key>
   </component>
