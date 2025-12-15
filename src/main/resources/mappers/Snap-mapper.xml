@@ -16,15 +16,21 @@
         SELECT * FROM snaps WHERE snap_id = #{snap_id}
     </select>
 
-    <update id="updateSnap">
-        UPDATE snaps SET
-                         snap_title = #{snap_title},
-                         coord_image = #{coord_image},
-                         product_image = #{product_image},
-                         category = #{category},
-                         style = #{style},
-                         color = #{color},
-                         price = #{price}
+    <update id="updateSnap" parameterType="snap">
+        UPDATE snaps
+        <set>
+            snap_title = #{snap_title},
+            category = #{category},
+            style = #{style},
+            color = #{color},
+            price = #{price},
+            <if test="coord_image != null">
+                coord_image = #{coord_image},
+            </if>
+            <if test="product_image != null">
+                product_image = #{product_image},
+            </if>
+        </set>
         WHERE snap_id = #{snap_id}
     </update>
 

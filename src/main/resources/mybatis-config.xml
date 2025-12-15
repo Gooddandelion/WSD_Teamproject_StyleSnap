@@ -7,5 +7,6 @@
     <typeAliases>
         <typeAlias alias="snap" type="com.example.bean.SnapVO"/>
         <typeAlias alias="user" type="com.example.bean.UserVO"/>
+        <typeAlias alias="folder" type="com.example.bean.FolderVO"/>
     </typeAliases>
 </configuration>
