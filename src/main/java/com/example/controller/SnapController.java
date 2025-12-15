@@ -32,7 +32,7 @@ public class SnapController {
 
     @RequestMapping("/")
     public String home() {
-        return "/snaps/index";
+        return "/snaps/list";
     }
 
     @GetMapping("/write")

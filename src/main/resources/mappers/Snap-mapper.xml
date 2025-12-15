@@ -50,4 +50,18 @@
         WHERE snap_id = #{snap_id}
     </update>
 
+    <!-- 최신 스냅 6개 -->
+    <select id="getRecentSnaps" resultType="snap">
+        SELECT * FROM snaps
+        ORDER BY snap_id DESC
+            LIMIT 6
+    </select>
+
+    <!-- 인기 스냅 4개 (좋아요 순) -->
+    <select id="getPopularSnaps" resultType="snap">
+        SELECT * FROM snaps
+        ORDER BY like_count DESC, view_count DESC
+            LIMIT 4
+    </select>
+
 </mapper>
