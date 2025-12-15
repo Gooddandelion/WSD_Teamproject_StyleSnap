@@ -26,4 +26,9 @@
         SELECT COUNT(*) FROM users WHERE nickname = #{nickname}
     </select>
 
+    <select id="checkDuplicate" parameterType="map" resultType="int">
+        SELECT COUNT(*) FROM folder_snap
+        WHERE folder_id = #{folder_id} AND snap_id = #{snap_id}
+    </select>
+
 </mapper>

@@ -53,20 +53,31 @@ public class FolderController {
         return "success";
     }
 
-    // 3. 스냅 저장하기
     @PostMapping("/save")
     @ResponseBody
     public String saveSnap(@RequestParam("folder_id") int folderId,
-                           @RequestParam("snap_id") int snapId) {
+                           @RequestParam("snap_id") int snapId,
+                           HttpSession session) {
+
+        // 로그인 체크 추가
+        UserVO user = (UserVO) session.getAttribute("loginUser");
+        if (user == null) {
+            return "fail";
+        }
+
+        // 중복 저장 체크 추가
         Map<String, Object> map = new HashMap<>();
         map.put("folder_id", folderId);
         map.put("snap_id", snapId);
 
+        Integer exists = sqlSession.selectOne("folder.checkDuplicate", map);
+        if (exists != null && exists > 0) {
+            return "duplicate";  // 이미 저장된 경우
+        }
+
         sqlSession.insert("folder.saveSnap", map);
         return "success";
     }
-
-    // ================= [아래 부분이 추가된 내용] =================
 
     // 4. 마이페이지 (내 폴더 리스트 보여주기)
     @GetMapping("/my")

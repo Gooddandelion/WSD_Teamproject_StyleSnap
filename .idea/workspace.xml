@@ -9,9 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: (User) update login.jsp">
+    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: 오타 수정 &amp; 생성자 파라미터 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/FolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/FolderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/User-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/User-mapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +218,7 @@
       <workItem from="1765445731765" duration="5957000" />
       <workItem from="1765472768743" duration="324000" />
       <workItem from="1765607395971" duration="6891000" />
-      <workItem from="1765732643713" duration="2098000" />
+      <workItem from="1765732643713" duration="2734000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setting project">
       <option name="closed" value="true" />
@@ -323,7 +324,23 @@
       <option name="project" value="LOCAL" />
       <updated>1765631844431</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix: pom.xml &#10;&#10;- Java 버전 1.8 → 17 업그레이드 (기획서 명세 반영)&#10;- groupId/artifactId를 stylesnap으로 변경&#10;- 의존성 버전 properties로 통합 관리">
+      <option name="closed" value="true" />
+      <created>1765783886320</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1765783886320</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix: 오타 수정 &amp; 생성자 파라미터 수정">
+      <option name="closed" value="true" />
+      <created>1765784427813</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1765784427813</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,6 +386,8 @@
     <MESSAGE value="feat: (User) create signup.jsp" />
     <MESSAGE value="feat: (User) create login.jsp" />
     <MESSAGE value="fix: (User) update login.jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: (User) update login.jsp" />
+    <MESSAGE value="fix: pom.xml &#10;&#10;- Java 버전 1.8 → 17 업그레이드 (기획서 명세 반영)&#10;- groupId/artifactId를 stylesnap으로 변경&#10;- 의존성 버전 properties로 통합 관리" />
+    <MESSAGE value="fix: 오타 수정 &amp; 생성자 파라미터 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 오타 수정 &amp; 생성자 파라미터 수정" />
   </component>
 </project>

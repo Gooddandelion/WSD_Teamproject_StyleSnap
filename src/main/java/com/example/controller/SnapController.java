@@ -95,8 +95,19 @@ public class SnapController {
 
     // 1. 수정 페이지로 이동 (기존 데이터 들고 감)
     @GetMapping("/edit/{id}")
-    public String editSnap(@PathVariable("id") int id, Model model) {
+    public String editSnap(@PathVariable("id") int id, Model model, HttpSession session) {
+        UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+        if (loginUser == null) {
+            return "redirect:/users/login";
+        }
+
         SnapVO snapVO = snapDAO.getSnap(id);
+
+        // 본인 글인지 확인
+        if (snapVO.getUser_id() != loginUser.getUser_id()) {
+            return "redirect:/snaps/list";  // 또는 에러 페이지
+        }
+
         model.addAttribute("u", snapVO);
         return "/snaps/edit";
     }
@@ -105,18 +116,28 @@ public class SnapController {
     @PostMapping("/edit/ok")
     public String editSnapOk(SnapVO snapVO,
                              @RequestParam("coordFile") MultipartFile coordFile,
-                             @RequestParam("productFile") MultipartFile productFile) throws IOException {
+                             @RequestParam("productFile") MultipartFile productFile,
+                             HttpSession session) throws IOException {
+
+        UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+        if (loginUser == null) {
+            return "redirect:/users/login";
+        }
+
+        // 기존 글 조회 후 본인 확인
+        SnapVO original = snapDAO.getSnap(snapVO.getSnap_id());
+        if (original.getUser_id() != loginUser.getUser_id()) {
+            return "redirect:/snaps/list";
+        }
 
         String uploadPath = servletContext.getRealPath("/resources/img/uploads/");
 
-        // 새 코디 이미지가 있을 때만 교체
         if (!coordFile.isEmpty()) {
             String coordFileName = UUID.randomUUID() + "_" + coordFile.getOriginalFilename();
             coordFile.transferTo(new File(uploadPath + coordFileName));
             snapVO.setCoord_image("/resources/img/uploads/" + coordFileName);
         }
 
-        // 새 상품 이미지가 있을 때만 교체
         if (!productFile.isEmpty()) {
             String productFileName = UUID.randomUUID() + "_" + productFile.getOriginalFilename();
             productFile.transferTo(new File(uploadPath + productFileName));
@@ -124,11 +145,6 @@ public class SnapController {
         }
 
         snapDAO.updateSnap(snapVO);
-        return "redirect:/snaps/list";
-    }
-    @GetMapping("/delete/{id}")
-    public String deleteSnap(@PathVariable("id") int id) {
-        snapDAO.deleteSnap(id);
         return "redirect:/snaps/list";
     }
 
@@ -159,5 +175,23 @@ public class SnapController {
 
         // 4. 다시 원래 보던 상세 페이지로 돌아가기
         return "redirect:/snaps/view/" + snap_id;
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteSnap(@PathVariable("id") int id, HttpSession session) {
+        UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+        if (loginUser == null) {
+            return "redirect:/users/login";
+        }
+
+        SnapVO snapVO = snapDAO.getSnap(id);
+
+        // 본인 글인지 확인
+        if (snapVO.getUser_id() != loginUser.getUser_id()) {
+            return "redirect:/snaps/list";
+        }
+
+        snapDAO.deleteSnap(id);
+        return "redirect:/snaps/list";
     }
 }
