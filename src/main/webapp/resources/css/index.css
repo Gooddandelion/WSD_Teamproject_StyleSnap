@@ -1,0 +1,246 @@
+/* index.css - StyleSnap 메인 페이지 스타일 */
+
+/* 기본 */
+body {
+    background-color: #f8f9fa;
+    padding-bottom: 70px; /* 하단 네비게이션 공간 */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* 섹션 공통 */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-header h5,
+.section-header h6 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.section-header a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.section-header a:hover {
+    color: #333;
+}
+
+.card-section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* AI 추천 섹션 */
+.ai-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    height: 100%;
+}
+
+.ai-box h6 {
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+}
+
+.ai-box h4 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* 스냅 카드 */
+.snap-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.snap-card {
+    aspect-ratio: 59/71;
+}
+
+.snap-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.snap-card img:hover {
+    transform: scale(1.02);
+}
+
+.snap-card .heart-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.snap-card .heart-btn:hover {
+    background: #fff;
+}
+
+.snap-card .heart-btn .fa-heart {
+    color: #ff6b6b;
+}
+
+/* 트렌드 아이템 */
+.trend-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.trend-item:last-child {
+    border-bottom: none;
+}
+
+.trend-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.trend-item .info {
+    flex: 1;
+}
+
+.trend-item .info .title {
+    font-size: 0.85rem;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.trend-item .info .sub {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+/* 쇼핑 카드 */
+.shop-card {
+    text-align: center;
+}
+
+.shop-card img {
+    width: 100%;
+    aspect-ratio: 59/71;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #f0f0f0;
+}
+
+.shop-card .title {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.shop-card .price {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.shop-card .discount {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-left: 5px;
+}
+
+.shop-card .btn-buy {
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.shop-card .btn-buy:hover {
+    background: #555;
+}
+
+/* 두 컬럼 레이아웃 */
+.two-col-left {
+    border-right: 1px solid #eee;
+    padding-right: 20px;
+}
+
+.two-col-right {
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .two-col-left {
+        border-right: none;
+        padding-right: 12px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .two-col-right {
+        padding-left: 12px;
+    }
+}
+
+/* 빈 상태 */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+}
+
+.empty-state i {
+    color: #ddd;
+}
+
+.empty-state a {
+    color: #007bff;
+}
+
+/* 하단 네비게이션 */
+.fixed-bottom small {
+    font-size: 0.7rem;
+}
+
+.fixed-bottom a {
+    padding: 5px 15px;
+}
+
+.fixed-bottom a:hover {
+    color: #007bff !important;
+}

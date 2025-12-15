@@ -32,7 +32,7 @@ public class SnapController {
 
     @RequestMapping("/")
     public String home() {
-        return "/snaps/index";
+        return "/snaps/list";
     }
 
     @GetMapping("/write")
@@ -83,7 +83,7 @@ public class SnapController {
     @GetMapping("/list")
     public String snapList(Model model) {
         model.addAttribute("list", snapDAO.getSnapList());
-        return "/snaps/list";
+         return "/snaps/list";
     }
 
     @GetMapping("/view/{id}")

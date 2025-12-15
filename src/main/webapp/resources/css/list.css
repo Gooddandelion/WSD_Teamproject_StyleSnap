@@ -1,0 +1,252 @@
+/* list.css - 스냅 리스트 페이지 스타일 */
+
+body {
+    background-color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 헤더 */
+.header {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+.header .icons a {
+    color: #333;
+    margin-left: 15px;
+    font-size: 1.2rem;
+}
+
+/* 탭 네비게이션 */
+.tab-nav {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-nav a {
+    color: #999;
+    text-decoration: none;
+    margin-right: 25px;
+    font-size: 1rem;
+    padding-bottom: 10px;
+}
+
+.tab-nav a.active {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+}
+
+.tab-nav a:hover {
+    color: #000;
+}
+
+/* 필터 영역 */
+.filter-area {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: #fff;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: #000;
+}
+
+.filter-btn.active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.filter-btn i {
+    margin-left: 5px;
+    font-size: 0.7rem;
+}
+
+/* 선택된 필터 태그 */
+.selected-filters {
+    padding: 10px 0;
+}
+
+.filter-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    background: #f5f5f5;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    margin-right: 8px;
+}
+
+.filter-tag .remove {
+    margin-left: 8px;
+    cursor: pointer;
+    color: #999;
+}
+
+.filter-tag .remove:hover {
+    color: #000;
+}
+
+/* 결과 정보 */
+.result-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.result-info .count {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.result-info .sort-select {
+    border: none;
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* 스냅 그리드 */
+.snap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media (max-width: 992px) {
+    .snap-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .snap-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 스냅 아이템 */
+.snap-item {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    cursor: pointer;
+    max-height: 350px;
+}
+
+.snap-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+    background: #f5f5f5;
+}
+
+.snap-item:hover img {
+    transform: scale(1.05);
+}
+
+.snap-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s;
+}
+
+.snap-item:hover .overlay {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.snap-item .heart-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.snap-item .heart-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.snap-item .heart-btn.liked {
+    color: #ff6b6b;
+}
+
+/* 빈 상태 */
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: #999;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.empty-state p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.empty-state .btn-write {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+}
+
+.empty-state .btn-write:hover {
+    background: #333;
+}
+
+/* 초기화 버튼 */
+.reset-btn {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.reset-btn:hover {
+    color: #000;
+}
