@@ -5,6 +5,9 @@
     <title>마이페이지 - 내 보관함</title>
 </head>
 <body>
+
+<%@ include file="/WEB-INF/views/header.jsp" %>
+
 <h1>📂 내 보관함 (My Archive)</h1>
 <a href="${pageContext.request.contextPath}/snaps/list">🏠 전체 목록으로</a>
 <hr/>

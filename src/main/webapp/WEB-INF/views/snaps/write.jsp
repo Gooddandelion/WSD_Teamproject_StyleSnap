@@ -4,6 +4,9 @@
     <title>스냅 작성</title>
 </head>
 <body>
+
+<%@ include file="/WEB-INF/views/header.jsp" %>
+
 <h1>스냅 작성</h1>
 
 <form action="write" method="post" enctype="multipart/form-data">

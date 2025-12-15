@@ -48,6 +48,6 @@ public class UserController {
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
-        return "/snaps/list";
+        return "redirect:/snaps/list";
     }
 }

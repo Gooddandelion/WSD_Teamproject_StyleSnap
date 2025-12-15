@@ -5,6 +5,8 @@
     <title>${folderName} - 폴더 상세</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/views/header.jsp" %>
+
 <h1>📂 ${folderName}</h1>
 <p>이 폴더에 저장된 스냅 목록입니다.</p>
 <a href="${pageContext.request.contextPath}/folder/my">🔙 내 보관함으로 돌아가기</a>

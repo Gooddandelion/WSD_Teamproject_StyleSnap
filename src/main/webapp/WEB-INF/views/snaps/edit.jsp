@@ -4,6 +4,8 @@
     <title>스냅 수정</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/views/header.jsp" %>
+
 <h1>스냅 수정</h1>
 
 <form action="${pageContext.request.contextPath}/snaps/edit/ok" method="post" enctype="multipart/form-data">
