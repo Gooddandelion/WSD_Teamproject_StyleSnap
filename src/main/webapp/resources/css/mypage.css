@@ -2,10 +2,34 @@
 
 body {
     background-color: #f8f9fa;
+    /* 공통 폰트 설정 권장 */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* 프로필 섹션 */
+/* --- 상단 헤더 (JSP 인라인 스타일 대체용) --- */
+.main-header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo {
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #000;
+}
+
+.main-header .header-icons a {
+    color: #333;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+/* --- 프로필 섹션 --- */
 .profile-section {
     background: #fff;
     padding: 40px 20px;
@@ -18,6 +42,7 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    /* 그라데이션 배경은 이미지가 없을 때 유용 */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     margin: 0 auto 15px;
     display: flex;
@@ -77,12 +102,18 @@ body {
     gap: 10px;
 }
 
+/* Bootstrap .btn 클래스와 충돌 방지를 위해 구체적으로 명시하거나 클래스명 변경 권장
+   여기서는 우선순위를 높여 덮어씁니다. */
 .profile-actions .btn {
     padding: 10px 25px;
     border-radius: 25px;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none; /* a 태그일 경우 대비 */
 }
 
 .profile-actions .btn-edit {
@@ -93,6 +124,7 @@ body {
 
 .profile-actions .btn-edit:hover {
     border-color: #333;
+    background: #f9f9f9;
 }
 
 .profile-actions .btn-logout {
@@ -106,7 +138,7 @@ body {
     color: #fff;
 }
 
-/* 탭 네비게이션 */
+/* --- 탭 네비게이션 --- */
 .tab-nav {
     background: #fff;
     display: flex;
@@ -141,7 +173,7 @@ body {
     margin-bottom: 5px;
 }
 
-/* 섹션 헤더 */
+/* --- 섹션 헤더 --- */
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -169,13 +201,16 @@ body {
     font-size: 0.85rem;
     cursor: pointer;
     transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .section-header .add-btn:hover {
     background: #333;
 }
 
-/* 폴더 그리드 */
+/* --- 폴더 그리드 --- */
 .folder-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -183,6 +218,7 @@ body {
     padding: 0 15px;
     max-width: 1200px;
     margin: 0 auto;
+    padding-bottom: 40px; /* 하단 여백 */
 }
 
 @media (max-width: 992px) {
@@ -197,7 +233,7 @@ body {
     }
 }
 
-/* 폴더 카드 */
+/* --- 폴더 카드 --- */
 .folder-card {
     background: #fff;
     border-radius: 16px;
@@ -225,6 +261,9 @@ body {
 .folder-card .folder-preview .preview-item {
     overflow: hidden;
     background: #eee;
+    display: flex; /* 이미지가 없을 때 아이콘 중앙 정렬 */
+    align-items: center;
+    justify-content: center;
 }
 
 .folder-card .folder-preview .preview-item img {
@@ -234,9 +273,6 @@ body {
 }
 
 .folder-card .folder-preview .preview-empty {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: #ccc;
     font-size: 1.5rem;
 }
@@ -252,10 +288,15 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+    /* 긴 이름 말줄임 처리 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .folder-card .folder-name i {
     color: #ffc107;
+    flex-shrink: 0;
 }
 
 .folder-card .folder-count {
@@ -263,7 +304,7 @@ body {
     color: #999;
 }
 
-/* 빈 상태 */
+/* --- 빈 상태 (Empty State) --- */
 .empty-state {
     text-align: center;
     padding: 60px 20px;
@@ -307,7 +348,7 @@ body {
     background: #333;
 }
 
-/* 새 폴더 모달 */
+/* --- 새 폴더 모달 (Popup) --- */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -331,12 +372,16 @@ body {
     width: 90%;
     max-width: 400px;
     padding: 25px;
+    /* Bootstrap 충돌 방지: box-sizing 등 초기화 */
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .modal-content h3 {
     font-size: 1.2rem;
     margin-bottom: 20px;
     text-align: center;
+    font-weight: bold;
 }
 
 .modal-content input {
@@ -346,6 +391,7 @@ body {
     border-radius: 10px;
     font-size: 1rem;
     margin-bottom: 15px;
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
 }
 
 .modal-content input:focus {
@@ -365,11 +411,12 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.2s;
+    border: none;
+    font-weight: 600;
 }
 
 .modal-content .btn-cancel {
     background: #f5f5f5;
-    border: none;
     color: #666;
 }
 
@@ -379,7 +426,6 @@ body {
 
 .modal-content .btn-create {
     background: #000;
-    border: none;
     color: #fff;
 }
 

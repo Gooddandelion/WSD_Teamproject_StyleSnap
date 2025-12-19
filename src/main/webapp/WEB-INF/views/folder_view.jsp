@@ -11,7 +11,6 @@
 </head>
 <body>
 
-<!-- 헤더 -->
 <div class="folder-header">
     <div class="container">
         <div class="d-flex align-items-center">
@@ -36,7 +35,6 @@
     </div>
 </div>
 
-<!-- 스냅 그리드 -->
 <c:choose>
     <c:when test="${not empty list}">
         <div class="snap-grid">
@@ -46,7 +44,7 @@
                         <a href="${pageContext.request.contextPath}/snaps/view/${snap.snap_id}">
                             <img src="${pageContext.request.contextPath}${snap.coord_image}" alt="${snap.snap_title}">
                         </a>
-                        <button class="remove-btn" onclick="removeFromFolder(${snap.snap_id})" title="폴더에서 제거">
+                        <button class="remove-btn" onclick="removeFromFolder(${snap.snap_id}, event)" title="폴더에서 제거">
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
@@ -77,10 +75,13 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    const folderId = ${param.folder_id != null ? param.folder_id : 'null'} || window.location.pathname.split('/').pop();
+    // URL에서 폴더 ID 추출 (가장 마지막 경로 세그먼트)
+    const folderId = window.location.pathname.split('/').pop();
 
-    // 폴더에서 스냅 제거
-    function removeFromFolder(snapId) {
+    // 1. 폴더에서 스냅 제거
+    function removeFromFolder(snapId, event) {
+        if(event) event.stopPropagation(); // 버튼 클릭 시 이미지 링크 이동 방지
+
         if (!confirm('이 스냅을 폴더에서 제거하시겠습니까?')) return;
 
         fetch('${pageContext.request.contextPath}/folder/remove', {
@@ -93,15 +94,16 @@
                 if (result === 'success') {
                     location.reload();
                 } else {
-                    alert('제거 실패');
+                    alert('제거 실패: ' + result);
                 }
-            });
+            })
+            .catch(err => alert('오류 발생'));
     }
 
-    // 폴더 이름 변경
+    // 2. 폴더 이름 변경
     function renameFolder() {
         const newName = prompt('새 폴더 이름을 입력하세요:', '${folderName}');
-        if (!newName || newName === '${folderName}') return;
+        if (!newName || newName.trim() === '' || newName === '${folderName}') return;
 
         fetch('${pageContext.request.contextPath}/folder/rename', {
             method: 'POST',
@@ -118,9 +120,9 @@
             });
     }
 
-    // 폴더 삭제
+    // 3. 폴더 삭제
     function deleteFolder() {
-        if (!confirm('폴더를 삭제하시겠습니까? 저장된 스냅은 삭제되지 않습니다.')) return;
+        if (!confirm('정말 이 폴더를 삭제하시겠습니까?\n(저장된 스냅 원본은 삭제되지 않습니다)')) return;
 
         fetch('${pageContext.request.contextPath}/folder/delete', {
             method: 'POST',
@@ -130,6 +132,7 @@
             .then(res => res.text())
             .then(result => {
                 if (result === 'success') {
+                    alert('폴더가 삭제되었습니다.');
                     location.href = '${pageContext.request.contextPath}/folder/my';
                 } else {
                     alert('삭제 실패');

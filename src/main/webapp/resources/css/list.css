@@ -2,10 +2,11 @@
 
 body {
     background-color: #fff;
+    /* 공통 폰트 설정 */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* 헤더 */
+/* --- 헤더 --- */
 .header {
     padding: 15px 0;
     border-bottom: 1px solid #eee;
@@ -13,7 +14,7 @@ body {
 
 .header .logo {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 900; /* 조금 더 굵게 */
     color: #000;
     text-decoration: none;
 }
@@ -22,12 +23,25 @@ body {
     color: #333;
     margin-left: 15px;
     font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.2s;
 }
 
-/* 탭 네비게이션 */
+.header .icons a:hover {
+    color: #000;
+}
+
+/* --- 탭 네비게이션 --- */
 .tab-nav {
     padding: 15px 0;
     border-bottom: 1px solid #eee;
+    white-space: nowrap; /* 모바일에서 줄바꿈 방지 */
+    overflow-x: auto; /* 모바일 가로 스크롤 허용 */
+}
+
+/* 스크롤바 숨기기 (Chrome, Safari, Opera) */
+.tab-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .tab-nav a {
@@ -36,6 +50,7 @@ body {
     margin-right: 25px;
     font-size: 1rem;
     padding-bottom: 10px;
+    display: inline-block;
 }
 
 .tab-nav a.active {
@@ -48,10 +63,17 @@ body {
     color: #000;
 }
 
-/* 필터 영역 */
+/* --- 필터 영역 --- */
 .filter-area {
     padding: 15px 0;
     border-bottom: 1px solid #eee;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* 스크롤바 숨기기 */
+.filter-area::-webkit-scrollbar {
+    display: none;
 }
 
 .filter-btn {
@@ -62,14 +84,15 @@ body {
     border-radius: 20px;
     background: #fff;
     margin-right: 8px;
-    margin-bottom: 8px;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.2s;
+    color: #333;
 }
 
 .filter-btn:hover {
     border-color: #000;
+    color: #000;
 }
 
 .filter-btn.active {
@@ -86,39 +109,45 @@ body {
 /* 선택된 필터 태그 */
 .selected-filters {
     padding: 10px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .filter-tag {
     display: inline-flex;
     align-items: center;
-    padding: 5px 12px;
+    padding: 6px 14px;
     background: #f5f5f5;
-    border-radius: 15px;
+    border-radius: 20px;
     font-size: 0.85rem;
-    margin-right: 8px;
+    color: #333;
 }
 
 .filter-tag .remove {
     margin-left: 8px;
     cursor: pointer;
     color: #999;
+    font-weight: bold;
 }
 
 .filter-tag .remove:hover {
-    color: #000;
+    color: #ff6b6b;
 }
 
-/* 결과 정보 */
+/* --- 결과 정보 & 정렬 --- */
 .result-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 20px 0;
 }
 
 .result-info .count {
     color: #666;
     font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .result-info .sort-select {
@@ -126,18 +155,25 @@ body {
     font-size: 0.9rem;
     color: #333;
     cursor: pointer;
+    background: transparent;
+    font-weight: 600;
 }
 
-/* 스냅 그리드 */
+.result-info .sort-select:focus {
+    outline: none;
+}
+
+/* --- 스냅 그리드 (메인) --- */
 .snap-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3px;
+    gap: 15px; /* 간격 조금 더 넓게 수정 (취향에 따라 3px로 복구 가능) */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding-bottom: 80px; /* 하단 플로팅 버튼 여백 */
 }
 
+/* 반응형 처리 */
 @media (max-width: 992px) {
     .snap-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -147,16 +183,24 @@ body {
 @media (max-width: 768px) {
     .snap-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 }
 
-/* 스냅 아이템 */
+/* --- 스냅 아이템 (카드) --- */
 .snap-item {
     position: relative;
-    aspect-ratio: 3/4;
+    aspect-ratio: 3/4; /* 세로형 이미지 비율 고정 */
     overflow: hidden;
     cursor: pointer;
-    max-height: 350px;
+    border-radius: 8px; /* 둥근 모서리 추가 */
+    background: #f5f5f5; /* 로딩 전 배경색 */
+}
+
+.snap-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .snap-item img {
@@ -164,13 +208,13 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s;
-    background: #f5f5f5;
 }
 
 .snap-item:hover img {
     transform: scale(1.05);
 }
 
+/* 호버 시 어두워지는 효과 */
 .snap-item .overlay {
     position: absolute;
     top: 0;
@@ -179,51 +223,60 @@ body {
     bottom: 0;
     background: rgba(0, 0, 0, 0);
     transition: background 0.3s;
+    pointer-events: none; /* 클릭 통과 */
 }
 
 .snap-item:hover .overlay {
     background: rgba(0, 0, 0, 0.1);
 }
 
+/* 하트 버튼 */
 .snap-item .heart-btn {
     position: absolute;
-    bottom: 15px;
-    right: 15px;
-    background: none;
+    bottom: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    background: rgba(0,0,0,0.2);
     border: none;
+    border-radius: 50%;
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-    opacity: 0.8;
-    transition: opacity 0.2s, transform 0.2s;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .snap-item .heart-btn:hover {
-    opacity: 1;
+    background: rgba(0,0,0,0.5);
     transform: scale(1.1);
 }
 
 .snap-item .heart-btn.liked {
     color: #ff6b6b;
+    background: rgba(255, 255, 255, 0.9);
 }
 
-/* 빈 상태 */
+/* --- 빈 상태 (Empty State) --- */
 .empty-state {
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
     color: #999;
+    grid-column: 1 / -1; /* 그리드 전체 너비 차지 */
 }
 
 .empty-state i {
     font-size: 4rem;
     margin-bottom: 20px;
-    color: #ddd;
+    color: #eee;
 }
 
 .empty-state p {
     font-size: 1rem;
     margin-bottom: 20px;
+    color: #666;
 }
 
 .empty-state .btn-write {
@@ -234,19 +287,47 @@ body {
     text-decoration: none;
     border-radius: 25px;
     font-size: 0.9rem;
+    transition: background 0.2s;
 }
 
 .empty-state .btn-write:hover {
     background: #333;
 }
 
-/* 초기화 버튼 */
+/* --- 초기화 버튼 --- */
 .reset-btn {
     color: #666;
     text-decoration: none;
     font-size: 0.85rem;
+    margin-left: auto; /* 우측 끝으로 밀기 */
 }
 
 .reset-btn:hover {
     color: #000;
+    text-decoration: underline;
+}
+
+/* --- 플로팅 글쓰기 버튼 (JSP 인라인 스타일 대체) --- */
+.fab-write {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    text-decoration: none;
+    z-index: 1000;
+    transition: transform 0.2s;
+}
+
+.fab-write:hover {
+    transform: scale(1.1) rotate(90deg);
+    color: #fff;
 }
