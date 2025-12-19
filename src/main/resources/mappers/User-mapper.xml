@@ -26,4 +26,17 @@
         SELECT COUNT(*) FROM users WHERE nickname = #{nickname}
     </select>
 
+    <update id="updateUser" parameterType="com.example.bean.UserVO">
+        UPDATE users
+        SET nickname = #{nickname}
+        <if test="profile_image != null">
+            , profile_image = #{profile_image}
+        </if>
+        WHERE user_id = #{user_id}
+    </update>
+
+    <select id="getUser" resultType="com.example.bean.UserVO">
+        SELECT * FROM users WHERE user_id = #{user_id}
+    </select>
+
 </mapper>

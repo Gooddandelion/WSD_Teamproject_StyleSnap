@@ -11,6 +11,14 @@ public class UserDAO {
     @Autowired
     private SqlSession sqlSession;
 
+    public int updateUser(UserVO userVO) {
+        return sqlSession.update("user.updateUser", userVO);
+    }
+
+    public UserVO getUser(int user_id) {
+        return sqlSession.selectOne("user.getUser", user_id);
+    }
+
     public int insertUser(UserVO userVO) {
         return sqlSession.insert("user.insertUser", userVO);
     }
