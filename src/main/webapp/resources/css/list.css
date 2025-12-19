@@ -63,17 +63,15 @@ body {
     color: #000;
 }
 
-/* --- 필터 영역 --- */
+
 .filter-area {
     padding: 15px 0;
     border-bottom: 1px solid #eee;
-    overflow-x: auto;
-    white-space: nowrap;
-}
-
-/* 스크롤바 숨기기 */
-.filter-area::-webkit-scrollbar {
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    overflow: visible;
 }
 
 .filter-btn {
@@ -83,7 +81,6 @@ body {
     border: 1px solid #ddd;
     border-radius: 20px;
     background: #fff;
-    margin-right: 8px;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.2s;

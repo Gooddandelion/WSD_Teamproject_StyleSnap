@@ -15,8 +15,8 @@
     <div class="container">
         <a class="navbar-brand" href="${pageContext.request.contextPath}/">StyleSnap</a>
         <div>
-            <a href="${pageContext.request.contextPath}/snaps/list" class="btn btn-link text-dark">
-                <i class="fas fa-search"></i>
+            <a href="${pageContext.request.contextPath}/chat/" title="AI 코디 추천" style="margin-left: 10px; margin-right: 5px; color: #333;">
+                <i class="fas fa-robot"></i>
             </a>
             <c:choose>
                 <c:when test="${not empty sessionScope.loginUser}">

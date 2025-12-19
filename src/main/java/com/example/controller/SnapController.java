@@ -17,6 +17,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @Controller
@@ -81,9 +83,24 @@ public class SnapController {
     }
 
     @GetMapping("/list")
-    public String snapList(Model model) {
-        model.addAttribute("list", snapDAO.getSnapList());
-         return "/snaps/list";
+    public String snapList(
+            @RequestParam(value = "category", required = false) String category,
+            @RequestParam(value = "style", required = false) String style,
+            @RequestParam(value = "color", required = false) String color,
+            @RequestParam(value = "sort", required = false, defaultValue = "latest") String sort,
+            Model model) {
+
+        // 필터 조건들을 Map에 담기
+        Map<String, Object> filterParams = new HashMap<>();
+        filterParams.put("category", category);
+        filterParams.put("style", style);
+        filterParams.put("color", color);
+        filterParams.put("sort", sort);
+
+        // DAO에 Map 전달 (필터링된 결과 받기)
+        model.addAttribute("list", snapDAO.getSnapList(filterParams));
+
+        return "/snaps/list";
     }
 
     @GetMapping("/view/{id}")

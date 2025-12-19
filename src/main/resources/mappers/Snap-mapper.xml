@@ -8,8 +8,30 @@
         VALUES (#{user_id}, #{snap_title}, #{coord_image}, #{product_image}, #{category}, #{style}, #{color}, #{price})
     </insert>
 
-    <select id="getSnapList" resultType="snap">
-        SELECT * FROM snaps ORDER BY snap_id DESC
+    <select id="getSnapList" parameterType="map" resultType="snap">
+        SELECT * FROM snaps
+        <where>
+            <if test="category != null and category != ''">
+                AND category = #{category}
+            </if>
+            <if test="style != null and style != ''">
+                AND style = #{style}
+            </if>
+            <if test="color != null and color != ''">
+                AND color = #{color}
+            </if>
+        </where>
+        ORDER BY
+        <choose>
+            <when test="sort == 'popular'">
+                like_count DESC, view_count DESC, snap_id DESC
+            </when>
+            <when test="sort == 'views'">
+                view_count DESC, snap_id DESC
+            </when>
+            <otherwise>
+                snap_id DESC </otherwise>
+        </choose>
     </select>
 
     <select id="getSnap" resultType="snap">

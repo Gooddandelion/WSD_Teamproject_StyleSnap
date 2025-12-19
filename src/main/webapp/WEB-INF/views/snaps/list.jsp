@@ -15,8 +15,6 @@
     <div class="header d-flex justify-content-between align-items-center">
         <a href="${pageContext.request.contextPath}/" class="logo">SNAP</a>
         <div class="icons">
-            <a href="#"><i class="far fa-bell"></i></a>
-            <a href="#"><i class="fas fa-search"></i></a>
 
             <a href="${pageContext.request.contextPath}/chat/" title="AI 코디 추천" style="margin-left: 10px; margin-right: 5px; color: #333;">
                 <i class="fas fa-robot"></i>
@@ -33,13 +31,11 @@
         </div>
     </div>
 
-    <div class="tab-nav">
-        <a href="${pageContext.request.contextPath}/snaps/list" class="active">스냅</a>
-        <a href="#">투데이</a>
-        <a href="#">랭킹</a>
-        <c:if test="${not empty sessionScope.loginUser}">
-            <a href="${pageContext.request.contextPath}/folder/my">팔로잉</a>
-        </c:if>
+    <div id="searchBar" style="display: none; padding: 10px 0; border-bottom: 1px solid #eee; background: #fff;">
+        <form action="${pageContext.request.contextPath}/snaps/list" method="get" class="d-flex gap-2">
+            <input type="text" name="keyword" class="form-control" placeholder="제목, 스타일, 카테고리 검색..." value="${param.keyword}">
+            <button type="submit" class="btn btn-dark">검색</button>
+        </form>
     </div>
 
     <div class="filter-area">
@@ -54,15 +50,54 @@
         <button class="filter-btn ${param.category == '아우터' ? 'active' : ''}"
                 onclick="location.href='?category=아우터'">아우터</button>
 
-        <button class="filter-btn">
-            스타일 <i class="fas fa-chevron-down"></i>
-        </button>
-        <button class="filter-btn">
-            카테고리 <i class="fas fa-chevron-down"></i>
-        </button>
-        <button class="filter-btn">
-            색상 <i class="fas fa-chevron-down"></i>
-        </button>
+        <div class="d-inline-block dropdown">
+            <button class="filter-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                ${not empty param.style ? param.style : '스타일'}
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="javascript:applyFilter('style', '')">전체</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('style', '캐주얼')">캐주얼</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('style', '스트릿')">스트릿</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('style', '미니멀')">미니멀</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('style', '빈티지')">빈티지</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('style', '스포티')">스포티</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('style', '포멀')">포멀</a></li>
+            </ul>
+        </div>
+
+        <div class="d-inline-block dropdown">
+            <button class="filter-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                ${not empty param.category ? param.category : '카테고리'}
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="javascript:applyFilter('category', '')">전체</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('category', '상의')">상의</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('category', '하의')">하의</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('category', '아우터')">아우터</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('category', '신발')">신발</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('category', '악세서리')">악세서리</a></li>
+            </ul>
+        </div>
+
+        <div class="d-inline-block dropdown">
+            <button class="filter-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                ${not empty param.color ? param.color : '색상'}
+            </button>
+            <ul class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
+                <li><a class="dropdown-item" href="javascript:applyFilter('color', '')">전체</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('color', '블랙')">블랙</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('color', '화이트')">화이트</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('color', '그레이')">그레이</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('color', '네이비')">네이비</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('color', '블루')">블루</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('color', '레드')">레드</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('color', '핑크')">핑크</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('color', '그린')">그린</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('color', '옐로우')">옐로우</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('color', '베이지')">베이지</a></li>
+                <li><a class="dropdown-item" href="javascript:applyFilter('color', '브라운')">브라운</a></li>
+            </ul>
+        </div>
     </div>
 
     <c:if test="${not empty param.category || not empty param.style}">
@@ -168,10 +203,27 @@
         location.href = '${pageContext.request.contextPath}/snaps/list?sort=' + sortType;
     }
 
-    // 필터 토글
-    function toggleFilter() {
-        // 필터 패널 토글 (추후 구현)
-        alert('필터 기능 준비 중');
+    // 검색창 토글 함수
+    function toggleSearchBar() {
+        const searchBar = document.getElementById('searchBar');
+        if (searchBar.style.display === 'none') {
+            searchBar.style.display = 'block';
+            searchBar.querySelector('input').focus();
+        } else {
+            searchBar.style.display = 'none';
+        }
+    }
+    function applyFilter(key, value) {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        if (value) {
+            urlParams.set(key, value); // 값 설정 또는 변경
+        } else {
+            urlParams.delete(key); // 값이 없으면(전체) 파라미터 삭제
+        }
+
+        // 페이지 이동
+        location.href = window.location.pathname + '?' + urlParams.toString();
     }
 </script>
 </body>

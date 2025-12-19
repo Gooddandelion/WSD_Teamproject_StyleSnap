@@ -1,5 +1,7 @@
 package com.example.dao;
 import java.util.List;
+import java.util.Map;
+
 import com.example.bean.SnapVO;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,10 @@ public class SnapDAO {
 
     @Autowired
     SqlSession sqlSession;
+
+    public List<SnapVO> getSnapList(Map<String, Object> params) {
+        return sqlSession.selectList("snap.getSnapList", params);
+    }
 
     public int insertSnap(SnapVO snapVO) {
         return sqlSession.insert("snap.insertSnap", snapVO);
