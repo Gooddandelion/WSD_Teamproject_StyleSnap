@@ -11,13 +11,16 @@
 </head>
 <body>
 
-<!-- 헤더 -->
 <div class="container">
     <div class="view-header d-flex justify-content-between align-items-center">
         <a href="${pageContext.request.contextPath}/snaps/list" class="back-btn">
             <i class="fas fa-arrow-left"></i>
         </a>
         <div class="header-icons">
+            <a href="${pageContext.request.contextPath}/chat/" title="AI 코디 추천" style="margin-right: 15px; color: #333;">
+                <i class="fas fa-robot"></i>
+            </a>
+
             <a href="#"><i class="fas fa-share-alt"></i></a>
             <a href="#"><i class="fas fa-ellipsis-h"></i></a>
         </div>
@@ -25,7 +28,6 @@
 </div>
 
 <div class="view-container">
-    <!-- 이미지 섹션 -->
     <div class="image-section">
         <div class="main-image" id="mainImage">
             <img src="${pageContext.request.contextPath}${snap.coord_image}" alt="${snap.snap_title}" id="mainImg">
@@ -42,7 +44,6 @@
         </div>
     </div>
 
-    <!-- 유저 정보 -->
     <div class="user-info">
         <div class="avatar">
             <i class="fas fa-user" style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:#999;"></i>
@@ -56,7 +57,6 @@
         </c:if>
     </div>
 
-    <!-- 스냅 정보 -->
     <div class="snap-info">
         <h1 class="title">${snap.snap_title}</h1>
         <div class="tags">
@@ -71,13 +71,11 @@
         </div>
     </div>
 
-    <!-- 통계 -->
     <div class="stats">
         <span><i class="far fa-eye"></i> ${snap.view_count}</span>
         <span><i class="far fa-heart"></i> ${snap.like_count}</span>
     </div>
 
-    <!-- 액션 버튼 -->
     <div class="action-buttons">
         <button class="action-btn like-btn" onclick="likeSnap(${snap.snap_id})">
             <i class="far fa-heart"></i>
@@ -89,7 +87,6 @@
         </button>
     </div>
 
-    <!-- 상세 정보 -->
     <div class="detail-table">
         <div class="row">
             <div class="label">카테고리</div>
@@ -109,7 +106,6 @@
         </div>
     </div>
 
-    <!-- 관리 버튼 (본인 글일 때만) -->
     <c:if test="${sessionScope.loginUser.user_id == snap.user_id}">
         <div class="manage-buttons">
             <a href="${pageContext.request.contextPath}/snaps/edit/${snap.snap_id}" class="manage-btn">
@@ -123,7 +119,6 @@
     </c:if>
 </div>
 
-<!-- 저장 모달 -->
 <div class="modal-overlay" id="saveModal">
     <div class="modal-content">
         <div class="modal-header">
@@ -132,7 +127,6 @@
         </div>
         <div class="modal-body">
             <ul class="folder-list" id="folderList">
-                <!-- 폴더 목록이 여기에 로드됨 -->
             </ul>
             <div class="new-folder-input">
                 <input type="text" id="newFolderName" placeholder="새 폴더 이름">

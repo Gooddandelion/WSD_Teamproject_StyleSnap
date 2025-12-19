@@ -11,13 +11,17 @@
 </head>
 <body>
 
-<!-- 헤더 -->
 <div class="container">
     <div class="header d-flex justify-content-between align-items-center">
         <a href="${pageContext.request.contextPath}/" class="logo">SNAP</a>
         <div class="icons">
             <a href="#"><i class="far fa-bell"></i></a>
             <a href="#"><i class="fas fa-search"></i></a>
+
+            <a href="${pageContext.request.contextPath}/chat/" title="AI 코디 추천" style="margin-left: 10px; margin-right: 5px; color: #333;">
+                <i class="fas fa-robot"></i>
+            </a>
+
             <c:choose>
                 <c:when test="${not empty sessionScope.loginUser}">
                     <a href="${pageContext.request.contextPath}/folder/my"><i class="fas fa-user"></i></a>
@@ -29,7 +33,6 @@
         </div>
     </div>
 
-    <!-- 탭 네비게이션 -->
     <div class="tab-nav">
         <a href="${pageContext.request.contextPath}/snaps/list" class="active">스냅</a>
         <a href="#">투데이</a>
@@ -39,7 +42,6 @@
         </c:if>
     </div>
 
-    <!-- 필터 영역 -->
     <div class="filter-area">
         <button class="filter-btn" onclick="toggleFilter()">
             <i class="fas fa-sliders-h"></i>
@@ -63,7 +65,6 @@
         </button>
     </div>
 
-    <!-- 선택된 필터 -->
     <c:if test="${not empty param.category || not empty param.style}">
         <div class="selected-filters">
             <c:if test="${not empty param.category}">
@@ -82,7 +83,6 @@
         </div>
     </c:if>
 
-    <!-- 결과 정보 -->
     <div class="result-info">
         <span class="count">
             <fmt:formatNumber value="${list.size()}" pattern="#,###"/>개
@@ -95,7 +95,6 @@
     </div>
 </div>
 
-<!-- 스냅 그리드 -->
 <div class="snap-grid">
     <c:forEach items="${list}" var="snap">
         <div class="snap-item">
@@ -110,7 +109,6 @@
     </c:forEach>
 </div>
 
-<!-- 빈 상태 -->
 <c:if test="${empty list}">
     <div class="empty-state">
         <i class="far fa-image"></i>
@@ -121,7 +119,6 @@
     </div>
 </c:if>
 
-<!-- 플로팅 버튼 (글쓰기) -->
 <c:if test="${not empty sessionScope.loginUser}">
     <a href="${pageContext.request.contextPath}/snaps/write"
        style="position: fixed; bottom: 30px; right: 30px; width: 56px; height: 56px;
