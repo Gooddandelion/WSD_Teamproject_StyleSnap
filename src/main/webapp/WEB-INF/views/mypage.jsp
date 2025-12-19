@@ -10,7 +10,15 @@
 </head>
 <body>
 
-<!-- 프로필 섹션 -->
+<div class="header d-flex justify-content-between align-items-center p-3" style="background: white; border-bottom: 1px solid #eee;">
+    <a href="${pageContext.request.contextPath}/snaps/list" style="font-weight: 900; font-size: 1.2rem; text-decoration: none; color: #000;">SNAP</a>
+    <div class="header-icons">
+        <a href="${pageContext.request.contextPath}/chat/" title="AI 코디 추천" style="color: #333; font-size: 1.2rem;">
+            <i class="fas fa-robot"></i>
+        </a>
+    </div>
+</div>
+
 <div class="profile-section">
     <div class="profile-avatar">
         <c:choose>
@@ -50,7 +58,6 @@
     </div>
 </div>
 
-<!-- 탭 네비게이션 -->
 <div class="tab-nav">
     <a href="#" class="tab active">
         <i class="fas fa-folder"></i>
@@ -66,7 +73,6 @@
     </a>
 </div>
 
-<!-- 섹션 헤더 -->
 <div class="section-header">
     <h2><i class="fas fa-folder"></i> 내 폴더</h2>
     <button class="add-btn" onclick="openNewFolderModal()">
@@ -74,14 +80,12 @@
     </button>
 </div>
 
-<!-- 폴더 그리드 -->
 <c:choose>
     <c:when test="${not empty folders}">
         <div class="folder-grid">
             <c:forEach items="${folders}" var="folder">
                 <a href="${pageContext.request.contextPath}/folder/view/${folder.folder_id}" class="folder-card">
                     <div class="folder-preview">
-                        <!-- 폴더 미리보기 이미지 (추후 구현) -->
                         <div class="preview-item preview-empty"><i class="fas fa-image"></i></div>
                         <div class="preview-item preview-empty"><i class="fas fa-image"></i></div>
                         <div class="preview-item preview-empty"><i class="fas fa-image"></i></div>
@@ -110,7 +114,6 @@
     </c:otherwise>
 </c:choose>
 
-<!-- 새 폴더 모달 -->
 <div class="modal-overlay" id="newFolderModal">
     <div class="modal-content">
         <h3><i class="fas fa-folder-plus"></i> 새 폴더 만들기</h3>
