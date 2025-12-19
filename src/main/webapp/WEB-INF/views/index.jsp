@@ -182,7 +182,7 @@
         </div>
 
         <div class="row g-3">
-            <c:forEach items="${recentSnaps}" var="snap">
+            <c:forEach items="${recentSnaps}" var="snap" end="3">
                 <div class="col-6 col-md-3">
                     <div class="snap-card">
                         <a href="${pageContext.request.contextPath}/snaps/view/${snap.snap_id}">

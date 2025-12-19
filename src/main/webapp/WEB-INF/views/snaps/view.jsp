@@ -29,19 +29,15 @@
 
 <div class="view-container">
     <div class="image-section">
-        <div class="main-image" id="mainImage">
-            <img src="${pageContext.request.contextPath}${snap.coord_image}" alt="${snap.snap_title}" id="mainImg">
+        <div class="dual-image-container">
+            <img src="${pageContext.request.contextPath}${snap.coord_image}" alt="코디 사진">
         </div>
-        <div class="d-flex flex-column gap-2">
-            <div class="sub-image active" onclick="changeImage('${pageContext.request.contextPath}${snap.coord_image}', this)">
-                <img src="${pageContext.request.contextPath}${snap.coord_image}" alt="코디 사진">
+
+        <c:if test="${not empty snap.product_image}">
+            <div class="dual-image-container">
+                <img src="${pageContext.request.contextPath}${snap.product_image}" alt="상품 사진">
             </div>
-            <c:if test="${not empty snap.product_image}">
-                <div class="sub-image" onclick="changeImage('${pageContext.request.contextPath}${snap.product_image}', this)">
-                    <img src="${pageContext.request.contextPath}${snap.product_image}" alt="상품 사진">
-                </div>
-            </c:if>
-        </div>
+        </c:if>
     </div>
 
     <div class="user-info">

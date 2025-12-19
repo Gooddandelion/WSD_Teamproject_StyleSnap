@@ -17,6 +17,10 @@ public class SnapDAO {
         return sqlSession.selectList("snap.getSnapList", params);
     }
 
+    public List<SnapVO> getSnapsByUserId(int userId) {
+        return sqlSession.selectList("snap.getSnapsByUserId", userId);
+    }
+
     public int insertSnap(SnapVO snapVO) {
         return sqlSession.insert("snap.insertSnap", snapVO);
     }

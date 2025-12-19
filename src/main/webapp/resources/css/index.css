@@ -184,39 +184,51 @@ body {
 .shop-card {
     text-align: center;
     cursor: pointer;
+    padding: 5px;
 }
 
 .shop-card img {
     width: 100%;
+    max-width: 90px;
+    max-height: 30px;
     aspect-ratio: 59/71;
     object-fit: cover;
     border-radius: 10px;
     background: #f0f0f0;
     margin-bottom: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
-.shop-card .title {
-    font-size: 0.85rem;
+shop-card .title {
+    font-size: 0.8rem;
     color: #666;
     margin-bottom: 2px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: block;
 }
 
 .shop-card .price {
     font-weight: bold;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #000;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
 }
 
 .shop-card .discount {
     color: #ff6b6b;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     margin-left: 5px;
     font-weight: normal;
 }
+
 
 /* 구매 버튼 스타일 제거 (미구현 기능) */
 

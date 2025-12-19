@@ -7,13 +7,38 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/mypage.css" rel="stylesheet">
+    <style>
+        /* 내 스냅 그리드 스타일 (folder_view.css 스타일 재사용) */
+        .snap-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 0 15px 50px 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .snap-card {
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 59/71;
+            position: relative;
+            background: #eee;
+        }
+        .snap-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* 탭 커서 설정 */
+        .tab-nav .tab { cursor: pointer; }
+    </style>
 </head>
 <body>
 
-<div class="header d-flex justify-content-between align-items-center p-3" style="background: white; border-bottom: 1px solid #eee;">
-    <a href="${pageContext.request.contextPath}/snaps/list" style="font-weight: 900; font-size: 1.2rem; text-decoration: none; color: #000;">SNAP</a>
+<div class="main-header">
+    <a href="${pageContext.request.contextPath}/" class="logo">SNAP</a>
     <div class="header-icons">
-        <a href="${pageContext.request.contextPath}/chat/" title="AI 코디 추천" style="color: #333; font-size: 1.2rem;">
+        <a href="${pageContext.request.contextPath}/chat/" title="AI 코디 추천">
             <i class="fas fa-robot"></i>
         </a>
     </div>
@@ -39,12 +64,8 @@
             <span class="stat-label">폴더</span>
         </div>
         <div class="stat">
-            <span class="stat-value" id="totalSnaps">0</span>
-            <span class="stat-label">저장한 스냅</span>
-        </div>
-        <div class="stat">
-            <span class="stat-value">0</span>
-            <span class="stat-label">팔로워</span>
+            <span class="stat-value">${mySnaps.size()}</span>
+            <span class="stat-label">내 스냅</span>
         </div>
     </div>
 
@@ -59,60 +80,88 @@
 </div>
 
 <div class="tab-nav">
-    <a href="#" class="tab active">
-        <i class="fas fa-folder"></i>
-        내 폴더
+    <a onclick="showTab('folder')" id="tab-folder" class="tab active">
+        <i class="fas fa-folder"></i> 내 폴더
     </a>
-    <a href="${pageContext.request.contextPath}/snaps/my" class="tab">
-        <i class="fas fa-camera"></i>
-        내 스냅
-    </a>
-    <a href="#" class="tab">
-        <i class="fas fa-heart"></i>
-        좋아요
+    <a onclick="showTab('snap')" id="tab-snap" class="tab">
+        <i class="fas fa-camera"></i> 내 스냅
     </a>
 </div>
 
-<div class="section-header">
-    <h2><i class="fas fa-folder"></i> 내 폴더</h2>
-    <button class="add-btn" onclick="openNewFolderModal()">
-        <i class="fas fa-plus"></i> 새 폴더
-    </button>
-</div>
+<div id="folderSection">
+    <div class="section-header">
+        <h2><i class="fas fa-folder"></i> 내 폴더</h2>
+        <button class="add-btn" onclick="openNewFolderModal()">
+            <i class="fas fa-plus"></i> 새 폴더
+        </button>
+    </div>
 
-<c:choose>
-    <c:when test="${not empty folders}">
-        <div class="folder-grid">
-            <c:forEach items="${folders}" var="folder">
-                <a href="${pageContext.request.contextPath}/folder/view/${folder.folder_id}" class="folder-card">
-                    <div class="folder-preview">
-                        <div class="preview-item preview-empty"><i class="fas fa-image"></i></div>
-                        <div class="preview-item preview-empty"><i class="fas fa-image"></i></div>
-                        <div class="preview-item preview-empty"><i class="fas fa-image"></i></div>
-                        <div class="preview-item preview-empty"><i class="fas fa-image"></i></div>
-                    </div>
-                    <div class="folder-info">
-                        <div class="folder-name">
-                            <i class="fas fa-folder"></i>
-                                ${folder.folder_name}
+    <c:choose>
+        <c:when test="${not empty folders}">
+            <div class="folder-grid">
+                <c:forEach items="${folders}" var="folder">
+                    <a href="${pageContext.request.contextPath}/folder/view/${folder.folder_id}" class="folder-card">
+                        <div class="folder-preview">
+                            <div class="preview-item preview-empty"><i class="fas fa-image"></i></div>
+                            <div class="preview-item preview-empty"><i class="fas fa-image"></i></div>
+                            <div class="preview-item preview-empty"><i class="fas fa-image"></i></div>
+                            <div class="preview-item preview-empty"><i class="fas fa-image"></i></div>
                         </div>
-                        <div class="folder-count">스냅 0개</div>
+                        <div class="folder-info">
+                            <div class="folder-name">
+                                <i class="fas fa-folder"></i> ${folder.folder_name}
+                            </div>
+                            <div class="folder-count">폴더 보기</div>
+                        </div>
+                    </a>
+                </c:forEach>
+            </div>
+        </c:when>
+        <c:otherwise>
+            <div class="empty-state">
+                <i class="far fa-folder-open"></i>
+                <h3>아직 폴더가 없습니다</h3>
+                <p>마음에 드는 스냅을 폴더에 저장해보세요!</p>
+                <button class="btn-create" onclick="openNewFolderModal()">
+                    <i class="fas fa-plus"></i> 첫 폴더 만들기
+                </button>
+            </div>
+        </c:otherwise>
+    </c:choose>
+</div>
+
+<div id="snapSection" style="display: none;">
+    <div class="section-header">
+        <h2><i class="fas fa-camera"></i> 내가 올린 스냅</h2>
+        <a href="${pageContext.request.contextPath}/snaps/write" class="add-btn" style="text-decoration:none;">
+            <i class="fas fa-pen"></i> 글쓰기
+        </a>
+    </div>
+
+    <c:choose>
+        <c:when test="${not empty mySnaps}">
+            <div class="snap-grid">
+                <c:forEach items="${mySnaps}" var="snap">
+                    <div class="snap-card">
+                        <a href="${pageContext.request.contextPath}/snaps/view/${snap.snap_id}">
+                            <img src="${pageContext.request.contextPath}${snap.coord_image}" alt="${snap.snap_title}">
+                        </a>
                     </div>
+                </c:forEach>
+            </div>
+        </c:when>
+        <c:otherwise>
+            <div class="empty-state">
+                <i class="fas fa-camera"></i>
+                <h3>등록한 스냅이 없습니다</h3>
+                <p>나만의 스타일을 공유해보세요!</p>
+                <a href="${pageContext.request.contextPath}/snaps/write" class="btn-create">
+                    첫 스냅 올리기
                 </a>
-            </c:forEach>
-        </div>
-    </c:when>
-    <c:otherwise>
-        <div class="empty-state">
-            <i class="far fa-folder-open"></i>
-            <h3>아직 폴더가 없습니다</h3>
-            <p>마음에 드는 스냅을 폴더에 저장해보세요!</p>
-            <button class="btn-create" onclick="openNewFolderModal()">
-                <i class="fas fa-plus"></i> 첫 폴더 만들기
-            </button>
-        </div>
-    </c:otherwise>
-</c:choose>
+            </div>
+        </c:otherwise>
+    </c:choose>
+</div>
 
 <div class="modal-overlay" id="newFolderModal">
     <div class="modal-content">
@@ -127,6 +176,26 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+    // 탭 전환 함수
+    function showTab(tabName) {
+        // 모든 탭 active 클래스 제거
+        document.getElementById('tab-folder').classList.remove('active');
+        document.getElementById('tab-snap').classList.remove('active');
+
+        // 모든 섹션 숨김
+        document.getElementById('folderSection').style.display = 'none';
+        document.getElementById('snapSection').style.display = 'none';
+
+        // 선택된 탭 활성화 및 섹션 표시
+        if (tabName === 'folder') {
+            document.getElementById('tab-folder').classList.add('active');
+            document.getElementById('folderSection').style.display = 'block';
+        } else {
+            document.getElementById('tab-snap').classList.add('active');
+            document.getElementById('snapSection').style.display = 'block';
+        }
+    }
+
     // 새 폴더 모달 열기
     function openNewFolderModal() {
         document.getElementById('newFolderModal').classList.add('show');

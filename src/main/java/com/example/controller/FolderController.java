@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.bean.FolderVO;
 import com.example.bean.SnapVO;
 import com.example.bean.UserVO;
+import com.example.dao.SnapDAO;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,9 @@ public class FolderController {
 
     @Autowired
     SqlSession sqlSession;
+
+    @Autowired
+    SnapDAO snapDAO;
 
     // 1. 내 폴더 리스트 가져오기 (JSON 반환 -> 팝업용)
     @GetMapping("/list")
@@ -76,8 +80,14 @@ public class FolderController {
         UserVO user = (UserVO) session.getAttribute("loginUser");
         if (user == null) return "redirect:/users/login";
 
+        // 1) 내 폴더 목록 가져오기
         List<FolderVO> folders = sqlSession.selectList("folder.getFolders", user.getUser_id());
+
+        // 2) [추가] 내 스냅 목록 가져오기
+        List<SnapVO> mySnaps = snapDAO.getSnapsByUserId(user.getUser_id());
+
         model.addAttribute("folders", folders);
+        model.addAttribute("mySnaps", mySnaps); // 모델에 추가
 
         return "mypage";
     }
