@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
-    <title>SNAP - stylezip</title>
+    <title>StyleZip</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 
 <div class="container">
     <div class="header d-flex justify-content-between align-items-center">
-        <a href="${pageContext.request.contextPath}/" class="logo">SNAP</a>
+        <a href="${pageContext.request.contextPath}/" class="logo">StyleZip</a>
         <div class="icons">
 
             <a href="${pageContext.request.contextPath}/chat/" title="AI 코디 추천" style="margin-left: 10px; margin-right: 5px; color: #333;">
@@ -123,9 +123,9 @@
             <fmt:formatNumber value="${list.size()}" pattern="#,###"/>개
         </span>
         <select class="sort-select" onchange="sortSnaps(this.value)">
-            <option value="latest">최신순</option>
-            <option value="popular">인기순</option>
-            <option value="views">조회순</option>
+            <option value="latest" ${param.sort == 'latest' || empty param.sort ? 'selected' : ''}>최신순</option>
+            <option value="popular" ${param.sort == 'popular' ? 'selected' : ''}>인기순</option>
+            <option value="views" ${param.sort == 'views' ? 'selected' : ''}>조회순</option>
         </select>
     </div>
 </div>
@@ -198,9 +198,10 @@
             });
     }
 
-    // 정렬
-    function sortSnaps(sortType) {
-        location.href = '${pageContext.request.contextPath}/snaps/list?sort=' + sortType;
+    function sortSnaps(sortValue) {
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set('sort', sortValue);
+        location.href = window.location.pathname + '?' + urlParams.toString();
     }
 
     // 검색창 토글 함수

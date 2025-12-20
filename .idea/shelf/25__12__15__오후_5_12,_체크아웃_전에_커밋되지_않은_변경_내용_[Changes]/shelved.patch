@@ -1,0 +1,505 @@
+Index: src/main/resources/mappers/Snap-mapper.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE mapper PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\"\n        \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">\n\n<mapper namespace=\"snap\">\n    <insert id=\"insertSnap\" parameterType=\"snap\">\n        INSERT INTO snaps (user_id, snap_title, coord_image, product_image, category, style, color, price)\n        VALUES (#{user_id}, #{snap_title}, #{coord_image}, #{product_image}, #{category}, #{style}, #{color}, #{price})\n    </insert>\n\n    <select id=\"getSnapList\" resultType=\"snap\">\n        SELECT * FROM snaps ORDER BY snap_id DESC\n    </select>\n\n    <select id=\"getSnap\" resultType=\"snap\">\n        SELECT * FROM snaps WHERE snap_id = #{snap_id}\n    </select>\n\n    <update id=\"updateSnap\">\n        UPDATE snaps SET\n                         snap_title = #{snap_title},\n                         coord_image = #{coord_image},\n                         product_image = #{product_image},\n                         category = #{category},\n                         style = #{style},\n                         color = #{color},\n                         price = #{price}\n        WHERE snap_id = #{snap_id}\n    </update>\n\n    <update id=\"countSnap\">\n        UPDATE snaps SET\n                        view_count = view_count+1\n        WHERE snap_id = #{snap_id}\n    </update>\n\n    <delete id=\"deleteSnap\">\n        DELETE FROM snaps WHERE snap_id = #{snap_id}\n    </delete>\n</mapper>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/mappers/Snap-mapper.xml b/src/main/resources/mappers/Snap-mapper.xml
+--- a/src/main/resources/mappers/Snap-mapper.xml	(revision 733e10e9e653b22db7ebda21fecfa903f182ef36)
++++ b/src/main/resources/mappers/Snap-mapper.xml	(date 1765786326816)
+@@ -16,15 +16,21 @@
+         SELECT * FROM snaps WHERE snap_id = #{snap_id}
+     </select>
+ 
+-    <update id="updateSnap">
+-        UPDATE snaps SET
+-                         snap_title = #{snap_title},
+-                         coord_image = #{coord_image},
+-                         product_image = #{product_image},
+-                         category = #{category},
+-                         style = #{style},
+-                         color = #{color},
+-                         price = #{price}
++    <update id="updateSnap" parameterType="snap">
++        UPDATE snaps
++        <set>
++            snap_title = #{snap_title},
++            category = #{category},
++            style = #{style},
++            color = #{color},
++            price = #{price},
++            <if test="coord_image != null">
++                coord_image = #{coord_image},
++            </if>
++            <if test="product_image != null">
++                product_image = #{product_image},
++            </if>
++        </set>
+         WHERE snap_id = #{snap_id}
+     </update>
+ 
+@@ -37,4 +43,25 @@
+     <delete id="deleteSnap">
+         DELETE FROM snaps WHERE snap_id = #{snap_id}
+     </delete>
++
++    <update id="likeSnap">
++        UPDATE snaps SET
++            like_count = like_count + 1
++        WHERE snap_id = #{snap_id}
++    </update>
++
++    <!-- 최신 스냅 6개 -->
++    <select id="getRecentSnaps" resultType="snap">
++        SELECT * FROM snaps
++        ORDER BY snap_id DESC
++            LIMIT 6
++    </select>
++
++    <!-- 인기 스냅 4개 (좋아요 순) -->
++    <select id="getPopularSnaps" resultType="snap">
++        SELECT * FROM snaps
++        ORDER BY like_count DESC, view_count DESC
++            LIMIT 4
++    </select>
++
+ </mapper>
+\ No newline at end of file
+Index: src/main/java/com/example/controller/SnapController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.controller;\n\nimport com.example.bean.SnapVO;\nimport com.example.bean.UserVO;\nimport com.example.dao.SnapDAO;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.stereotype.Controller;\nimport org.springframework.ui.Model;\nimport org.springframework.web.bind.annotation.GetMapping;\nimport org.springframework.web.bind.annotation.PathVariable;\nimport org.springframework.web.bind.annotation.PostMapping;\nimport org.springframework.web.bind.annotation.RequestMapping;\nimport org.springframework.web.bind.annotation.RequestParam;\nimport org.springframework.web.multipart.MultipartFile;\n\nimport javax.servlet.ServletContext;\nimport javax.servlet.http.HttpSession;\nimport java.io.File;\nimport java.io.IOException;\nimport java.util.UUID;\n\n@Controller\n\n@RequestMapping(\"/snaps\")\npublic class SnapController {\n\n    @Autowired\n    public SnapDAO snapDAO;\n\n    @Autowired\n    private ServletContext servletContext;\n\n    @RequestMapping(\"/\")\n    public String home() {\n        return \"/snaps/index\";\n    }\n\n    @GetMapping(\"/write\")\n    public String writeSnap() {\n        return \"/snaps/write\";\n    }\n\n    @PostMapping(\"/write\")\n    public String writeSnapOK(SnapVO snapVO,\n                              @RequestParam(\"coordFile\") MultipartFile coordFile,\n                              @RequestParam(\"productFile\") MultipartFile productFile,\n                              HttpSession httpSession) throws IOException {\n\n        UserVO loginUser = (UserVO) httpSession.getAttribute(\"loginUser\");\n        if (loginUser == null) {\n            return \"redirect:/users/login\";\n        }\n\n        // 로그인한 유저의 id 사용\n        snapVO.setUser_id(loginUser.getUser_id());\n\n        // 업로드 경로 설정\n        String uploadPath = servletContext.getRealPath(\"/resources/img/uploads/\");\n        File uploadDir = new File(uploadPath);\n        if (!uploadDir.exists()) {\n            uploadDir.mkdirs();\n        }\n\n        // 코디 이미지 저장\n        if (!coordFile.isEmpty()) {\n            String coordFileName = UUID.randomUUID() + \"_\" + coordFile.getOriginalFilename();\n            coordFile.transferTo(new File(uploadPath + coordFileName));\n            snapVO.setCoord_image(\"/resources/img/uploads/\" + coordFileName);\n        }\n\n        // 상품 이미지 저장\n        if (!productFile.isEmpty()) {\n            String productFileName = UUID.randomUUID() + \"_\" + productFile.getOriginalFilename();\n            productFile.transferTo(new File(uploadPath + productFileName));\n            snapVO.setProduct_image(\"/resources/img/uploads/\" + productFileName);\n        }\n\n        snapDAO.insertSnap(snapVO);\n\n        return \"redirect:/snaps/\";\n    }\n\n    @GetMapping(\"/list\")\n    public String snapList(Model model) {\n        model.addAttribute(\"list\", snapDAO.getSnapList());\n        return \"/snaps/list\";\n    }\n\n    @GetMapping(\"/view/{id}\")\n    public String viewSnap(@PathVariable(\"id\") int id, Model model) {\n        snapDAO.countSnap(id);\n        model.addAttribute(\"snap\", snapDAO.getSnap(id));\n        return \"/snaps/view\";\n    }\n\n    // 1. 수정 페이지로 이동 (기존 데이터 들고 감)\n    @GetMapping(\"/edit/{id}\")\n    public String editSnap(@PathVariable(\"id\") int id, Model model) {\n        SnapVO snapVO = snapDAO.getSnap(id);\n        model.addAttribute(\"u\", snapVO);\n        return \"/snaps/edit\";\n    }\n\n    // 2. 수정 완료 (DB 업데이트 후 목록으로 이동)\n    @PostMapping(\"/edit/ok\")\n    public String editSnapOk(SnapVO snapVO,\n                             @RequestParam(\"coordFile\") MultipartFile coordFile,\n                             @RequestParam(\"productFile\") MultipartFile productFile) throws IOException {\n\n        String uploadPath = servletContext.getRealPath(\"/resources/img/uploads/\");\n\n        // 새 코디 이미지가 있을 때만 교체\n        if (!coordFile.isEmpty()) {\n            String coordFileName = UUID.randomUUID() + \"_\" + coordFile.getOriginalFilename();\n            coordFile.transferTo(new File(uploadPath + coordFileName));\n            snapVO.setCoord_image(\"/resources/img/uploads/\" + coordFileName);\n        }\n\n        // 새 상품 이미지가 있을 때만 교체\n        if (!productFile.isEmpty()) {\n            String productFileName = UUID.randomUUID() + \"_\" + productFile.getOriginalFilename();\n            productFile.transferTo(new File(uploadPath + productFileName));\n            snapVO.setProduct_image(\"/resources/img/uploads/\" + productFileName);\n        }\n\n        snapDAO.updateSnap(snapVO);\n        return \"redirect:/snaps/list\";\n    }\n    @GetMapping(\"/delete/{id}\")\n    public String deleteSnap(@PathVariable(\"id\") int id) {\n        snapDAO.deleteSnap(id);\n        return \"redirect:/snaps/list\";\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/controller/SnapController.java b/src/main/java/com/example/controller/SnapController.java
+--- a/src/main/java/com/example/controller/SnapController.java	(revision 733e10e9e653b22db7ebda21fecfa903f182ef36)
++++ b/src/main/java/com/example/controller/SnapController.java	(date 1765786326868)
+@@ -32,7 +32,7 @@
+ 
+     @RequestMapping("/")
+     public String home() {
+-        return "/snaps/index";
++        return "/snaps/list";
+     }
+ 
+     @GetMapping("/write")
+Index: src/main/webapp/WEB-INF/views/snaps/index.jsp
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/views/snaps/index.jsp b/src/main/webapp/WEB-INF/views/snaps/index.jsp
+deleted file mode 100644
+--- a/src/main/webapp/WEB-INF/views/snaps/index.jsp	(revision 733e10e9e653b22db7ebda21fecfa903f182ef36)
++++ /dev/null	(revision 733e10e9e653b22db7ebda21fecfa903f182ef36)
+@@ -1,5 +0,0 @@
+-<html>
+-<body>
+-<h2>Hello World!</h2>
+-</body>
+-</html>
+Index: src/main/java/com/example/controller/IndexController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/controller/IndexController.java b/src/main/java/com/example/controller/IndexController.java
+new file mode 100644
+--- /dev/null	(date 1765786330622)
++++ b/src/main/java/com/example/controller/IndexController.java	(date 1765786330622)
+@@ -0,0 +1,31 @@
++package com.example.controller;
++
++import com.example.bean.SnapVO;
++import org.apache.ibatis.session.SqlSession;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Controller;
++import org.springframework.ui.Model;
++import org.springframework.web.bind.annotation.GetMapping;
++
++import java.util.List;
++
++@Controller
++public class IndexController {
++
++    @Autowired
++    private SqlSession sqlSession;
++
++    @GetMapping("/")
++    public String index(Model model) {
++
++        // 최신 스냅 6개 (최근 등록순)
++        List<SnapVO> recentSnaps = sqlSession.selectList("snap.getRecentSnaps");
++        model.addAttribute("recentSnaps", recentSnaps);
++
++        // 인기 스냅 4개 (좋아요 순)
++        List<SnapVO> popularSnaps = sqlSession.selectList("snap.getPopularSnaps");
++        model.addAttribute("popularSnaps", popularSnaps);
++
++        return "index";
++    }
++}
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/views/index.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/views/index.jsp b/src/main/webapp/WEB-INF/views/index.jsp
+new file mode 100644
+--- /dev/null	(date 1765786326842)
++++ b/src/main/webapp/WEB-INF/views/index.jsp	(date 1765786326842)
+@@ -0,0 +1,146 @@
++<%@ page contentType="text/html;charset=UTF-8" language="java" %>
++<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
++<html>
++<head>
++    <title>StyleSnap</title>
++</head>
++<body>
++
++<!-- 헤더 -->
++<div class="header">
++    <h1>StyleSnap</h1>
++    <div>
++        <a href="${pageContext.request.contextPath}/snaps/list">🔍</a>
++        <c:choose>
++            <c:when test="${not empty sessionScope.loginUser}">
++                <a href="${pageContext.request.contextPath}/folder/my">👤</a>
++            </c:when>
++            <c:otherwise>
++                <a href="${pageContext.request.contextPath}/users/login">👤</a>
++            </c:otherwise>
++        </c:choose>
++    </div>
++</div>
++
++<hr/>
++
++<!-- ========== 섹션 1: AI 맥락 인식 추천 (추후 구현) ========== -->
++<div class="section">
++    <div class="section-header">
++        <h2>AI 맥락 인식 추천</h2>
++        <a href="#">더보기 ></a>
++    </div>
++
++    <div class="ai-recommend">
++        <div class="ai-info">
++            <p>오늘의 방문지:</p>
++            <h3><!-- 추후 구현 --></h3>
++            <p>상황 최적화 코디:</p>
++            <h3><!-- 추후 구현 --></h3>
++        </div>
++        <div class="ai-snaps">
++            <!-- 추후 AI 추천 스냅 표시 -->
++            <p>추후 구현 예정</p>
++        </div>
++    </div>
++</div>
++
++<hr/>
++
++<!-- ========== 섹션 2: 폴더 + 커뮤니티 융합 ========== -->
++<div class="section">
++    <h2>폴더 + 커뮤니티 융합</h2>
++
++    <div class="two-column">
++        <!-- MY 폴더 -->
++        <div class="my-folder">
++            <div class="section-header">
++                <h3>MY 폴더</h3>
++                <a href="${pageContext.request.contextPath}/folder/my">더보기 ></a>
++            </div>
++
++            <c:choose>
++                <c:when test="${not empty sessionScope.loginUser}">
++                    <div class="folder-preview">
++                        <!-- 내 폴더의 스냅 미리보기 (추후 구현) -->
++                        <p>로그인 완료 - 폴더 미리보기 추후 구현</p>
++                    </div>
++                </c:when>
++                <c:otherwise>
++                    <p><a href="${pageContext.request.contextPath}/users/login">로그인</a>하고 내 폴더를 확인하세요!</p>
++                </c:otherwise>
++            </c:choose>
++        </div>
++
++        <!-- 커뮤니티 트렌드 -->
++        <div class="community-trend">
++            <div class="section-header">
++                <h3>커뮤니티 트렌드</h3>
++                <a href="${pageContext.request.contextPath}/snaps/list">더보기 ></a>
++            </div>
++
++            <div class="trend-snaps">
++                <!-- 인기 스냅 (좋아요 순) -->
++                <c:forEach items="${popularSnaps}" var="snap" end="3">
++                    <div class="snap-card">
++                        <a href="${pageContext.request.contextPath}/snaps/view/${snap.snap_id}">
++                            <img src="${pageContext.request.contextPath}${snap.coord_image}" width="100">
++                        </a>
++                        <p>${snap.snap_title}</p>
++                        <p>${snap.price}원</p>
++                    </div>
++                </c:forEach>
++
++                <c:if test="${empty popularSnaps}">
++                    <p>인기 스냅이 없습니다.</p>
++                </c:if>
++            </div>
++        </div>
++    </div>
++</div>
++
++<hr/>
++
++<!-- ========== 섹션 3: 스마트 쇼핑 (추후 구현) ========== -->
++<div class="section">
++    <h2>스마트 쇼핑</h2>
++
++    <div class="section-header">
++        <h3>AI 유사 스타일 할인 상품</h3>
++    </div>
++
++    <div class="shopping-list">
++        <!-- 추후 외부 API 연동 또는 상품 DB 구현 -->
++        <p>추후 구현 예정</p>
++    </div>
++</div>
++
++<hr/>
++
++<!-- ========== 섹션 4: 최신 스냅 (현재 구현됨) ========== -->
++<div class="section">
++    <div class="section-header">
++        <h2>최신 스냅</h2>
++        <a href="${pageContext.request.contextPath}/snaps/list">더보기 ></a>
++    </div>
++
++    <div class="snap-list">
++        <c:forEach items="${recentSnaps}" var="snap" end="5">
++            <div class="snap-card">
++                <a href="${pageContext.request.contextPath}/snaps/view/${snap.snap_id}">
++                    <img src="${pageContext.request.contextPath}${snap.coord_image}" width="150" height="200">
++                </a>
++                <p><b>${snap.snap_title}</b></p>
++                <p>${snap.category} | ${snap.style}</p>
++                <p>❤️ ${snap.like_count} | 👁️ ${snap.view_count}</p>
++            </div>
++        </c:forEach>
++
++        <c:if test="${empty recentSnaps}">
++            <p>등록된 스냅이 없습니다. <a href="${pageContext.request.contextPath}/snaps/write">첫 스냅을 등록해보세요!</a></p>
++        </c:if>
++    </div>
++</div>
++
++</body>
++</html>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ArtifactsWorkspaceSettings\">\n    <artifacts-to-build>\n      <artifact name=\"Spring1:war exploded\" />\n    </artifacts-to-build>\n  </component>\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"29eb28b9-07cc-456a-b4b9-1766493d9aaf\" name=\"Changes\" comment=\"fix: (User) update login.jsp\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"spring-beans.schema\" />\n        <option value=\"package-info\" />\n        <option value=\"Class\" />\n        <option value=\"Jsp File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"PREVIOUS_COMMIT_AUTHORS\">\n      <list>\n        <option value=\"Jang Soyeon &lt;jerry1004@handong.edu&gt;\" />\n      </list>\n    </option>\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"develop\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;Gooddandelion&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/Gooddandelion/WSD_Teamproject_StyleSnap.git&quot;,\n    &quot;accountId&quot;: &quot;5a3b2fc0-7353-4b87-a8e5-87b81c7d586e&quot;\n  }\n}</component>\n  <component name=\"KubernetesApiPersistence\">{}</component>\n  <component name=\"KubernetesApiProvider\">{\n  &quot;isMigrated&quot;: true\n}</component>\n  <component name=\"LogFilters\">\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\n    <option name=\"FILTER_INFO\" value=\"true\" />\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\n    <option name=\"CUSTOM_FILTER\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 2\n}</component>\n  <component name=\"ProjectId\" id=\"2YOV8fjQsTakAJbhqPWXv9EMYPi\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;Tomcat 서버.Tomcat 9.0.107.executor&quot;: &quot;Run&quot;,\n    &quot;Tomcat 서버.Tomcat 9.0.111.executor&quot;: &quot;Run&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;heonil&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.27471265&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps\" />\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources/mappers\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Tomcat 9.0.111\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 9.0.111\" ALTERNATIVE_JRE_ENABLED=\"false\" nameIsGenerated=\"true\">\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\n      <deployment>\n        <artifact name=\"Spring1:war exploded\">\n          <settings>\n            <option name=\"CONTEXT_PATH\" value=\"/\" />\n          </settings>\n        </artifact>\n      </deployment>\n      <server-settings>\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"c1913eb3-d243-4f43-b650-4c59f89fe893\" />\n      </server-settings>\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\n      <predefined_log_file id=\"Tomcat Manager\" />\n      <predefined_log_file id=\"Tomcat Host Manager\" />\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\n      <RunnerSettings RunnerId=\"Debug\">\n        <option name=\"DEBUG_PORT\" value=\"56528\" />\n      </RunnerSettings>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n        <option name=\"BuildArtifacts\" enabled=\"true\">\n          <artifact name=\"Spring1:war exploded\" />\n        </option>\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18\" />\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"29eb28b9-07cc-456a-b4b9-1766493d9aaf\" name=\"Changes\" comment=\"\" />\n      <created>1700396454596</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1700396454596</updated>\n      <workItem from=\"1700396455745\" duration=\"956000\" />\n      <workItem from=\"1765384564309\" duration=\"150000\" />\n      <workItem from=\"1765445731765\" duration=\"5957000\" />\n      <workItem from=\"1765472768743\" duration=\"324000\" />\n      <workItem from=\"1765607395971\" duration=\"6891000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"feat: setting project\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765450701940</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765450701940</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"fix: add fileupload dependency\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765503995848</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765503995848</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"fix: fix conflict\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765606002302</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765606002302</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"fix: fix conflict (DB connection)\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765607339542</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765607339542</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"fix: update edit form ( 사진 누락 문제 해결 )\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765608176331</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765608176331</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"feat: add view.jsp\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765608191337</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765608191337</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"feat: add view_count function\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765626617346</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765626617347</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"feat: (User) create UserVO\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765627004314</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765627004314</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"feat: (User) create User-mapper.xml\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765627173997</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765627173997</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"feat: (User) create UserDAO\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765627531296</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765627531296</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"feat: (User) create login.jsp\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765631487808</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765631487808</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"feat: (User) create login.jsp\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765631517725</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765631517725</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"fix: (User) update login.jsp\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765631844431</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765631844431</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"14\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Changes\" />\n    <MESSAGE value=\"Update web.xml\" />\n    <MESSAGE value=\"feat: setting project\" />\n    <MESSAGE value=\"fix: add fileupload dependency\" />\n    <MESSAGE value=\"fix: fix conflict\" />\n    <MESSAGE value=\"fix: fix conflict (DB connection)\" />\n    <MESSAGE value=\"fix: update edit form ( 사진 누락 문제 해결 )\" />\n    <MESSAGE value=\"feat: add view.jsp\" />\n    <MESSAGE value=\"feat: add view_count function\" />\n    <MESSAGE value=\"feat: (User) create UserVO\" />\n    <MESSAGE value=\"feat: (User) create User-mapper.xml\" />\n    <MESSAGE value=\"feat: (User) create UserDAO\" />\n    <MESSAGE value=\"feat: (User) create signup.jsp\" />\n    <MESSAGE value=\"feat: (User) create signup.jsp\" />\n    <MESSAGE value=\"feat: (User) create login.jsp\" />\n    <MESSAGE value=\"fix: (User) update login.jsp\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"fix: (User) update login.jsp\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 733e10e9e653b22db7ebda21fecfa903f182ef36)
++++ b/.idea/workspace.xml	(date 1765786330604)
+@@ -9,10 +9,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: (User) update login.jsp">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: folder alias 추가">
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/IndexController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -24,8 +24,8 @@
+       <list>
+         <option value="spring-beans.schema" />
+         <option value="package-info" />
+-        <option value="Class" />
+         <option value="Jsp File" />
++        <option value="Class" />
+       </list>
+     </option>
+   </component>
+@@ -37,7 +37,7 @@
+     </option>
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="develop" />
++        <entry key="$PROJECT_DIR$" value="hotfix" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -49,12 +49,22 @@
+     &quot;assignee&quot;: &quot;Gooddandelion&quot;
+   }
+ }</component>
+-  <component name="GithubPullRequestsUISettings">{
+-  &quot;selectedUrlAndAccountId&quot;: {
+-    &quot;url&quot;: &quot;https://github.com/Gooddandelion/WSD_Teamproject_StyleSnap.git&quot;,
+-    &quot;accountId&quot;: &quot;5a3b2fc0-7353-4b87-a8e5-87b81c7d586e&quot;
+-  }
+-}</component>
++  <component name="GithubPullRequestsUISettings"><![CDATA[{
++  "selectedUrlAndAccountId": {
++    "url": "https://github.com/Gooddandelion/WSD_Teamproject_StyleSnap.git",
++    "accountId": "5a3b2fc0-7353-4b87-a8e5-87b81c7d586e"
++  },
++  "recentNewPullRequestHead": {
++    "server": {
++      "useHttp": false,
++      "host": "github.com",
++      "port": null,
++      "suffix": null
++    },
++    "owner": "Gooddandelion",
++    "repository": "WSD_Teamproject_StyleSnap"
++  }
++}]]></component>
+   <component name="KubernetesApiPersistence">{}</component>
+   <component name="KubernetesApiProvider">{
+   &quot;isMigrated&quot;: true
+@@ -78,29 +88,29 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;Tomcat 서버.Tomcat 9.0.107.executor&quot;: &quot;Run&quot;,
+-    &quot;Tomcat 서버.Tomcat 9.0.111.executor&quot;: &quot;Run&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;heonil&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.27471265&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "Tomcat 서버.Tomcat 9.0.107.executor": "Run",
++    "Tomcat 서버.Tomcat 9.0.111.executor": "Run",
++    "WebServerToolWindowFactoryState": "false",
++    "git-widget-placeholder": "develop",
++    "kotlin-language-version-configured": "true",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "project.structure.last.edited": "모듈",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.27471265",
++    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps" />
+@@ -218,6 +228,7 @@
+       <workItem from="1765445731765" duration="5957000" />
+       <workItem from="1765472768743" duration="324000" />
+       <workItem from="1765607395971" duration="6891000" />
++      <workItem from="1765732643713" duration="3371000" />
+     </task>
+     <task id="LOCAL-00001" summary="feat: setting project">
+       <option name="closed" value="true" />
+@@ -323,7 +334,39 @@
+       <option name="project" value="LOCAL" />
+       <updated>1765631844431</updated>
+     </task>
+-    <option name="localTasksCounter" value="14" />
++    <task id="LOCAL-00014" summary="fix: pom.xml &#10;&#10;- Java 버전 1.8 → 17 업그레이드 (기획서 명세 반영)&#10;- groupId/artifactId를 stylesnap으로 변경&#10;- 의존성 버전 properties로 통합 관리">
++      <option name="closed" value="true" />
++      <created>1765783886320</created>
++      <option name="number" value="00014" />
++      <option name="presentableId" value="LOCAL-00014" />
++      <option name="project" value="LOCAL" />
++      <updated>1765783886320</updated>
++    </task>
++    <task id="LOCAL-00015" summary="fix: 오타 수정 &amp; 생성자 파라미터 수정">
++      <option name="closed" value="true" />
++      <created>1765784427813</created>
++      <option name="number" value="00015" />
++      <option name="presentableId" value="LOCAL-00015" />
++      <option name="project" value="LOCAL" />
++      <updated>1765784427813</updated>
++    </task>
++    <task id="LOCAL-00016" summary="fix: user 기능 (본인 확인 로직 추가)">
++      <option name="closed" value="true" />
++      <created>1765784648053</created>
++      <option name="number" value="00016" />
++      <option name="presentableId" value="LOCAL-00016" />
++      <option name="project" value="LOCAL" />
++      <updated>1765784648053</updated>
++    </task>
++    <task id="LOCAL-00017" summary="fix: folder alias 추가">
++      <option name="closed" value="true" />
++      <created>1765784858782</created>
++      <option name="number" value="00017" />
++      <option name="presentableId" value="LOCAL-00017" />
++      <option name="project" value="LOCAL" />
++      <updated>1765784858782</updated>
++    </task>
++    <option name="localTasksCounter" value="18" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -334,7 +377,19 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="classroom/develop" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
+@@ -357,6 +412,10 @@
+     <MESSAGE value="feat: (User) create signup.jsp" />
+     <MESSAGE value="feat: (User) create login.jsp" />
+     <MESSAGE value="fix: (User) update login.jsp" />
+-    <option name="LAST_COMMIT_MESSAGE" value="fix: (User) update login.jsp" />
++    <MESSAGE value="fix: pom.xml &#10;&#10;- Java 버전 1.8 → 17 업그레이드 (기획서 명세 반영)&#10;- groupId/artifactId를 stylesnap으로 변경&#10;- 의존성 버전 properties로 통합 관리" />
++    <MESSAGE value="fix: 오타 수정 &amp; 생성자 파라미터 수정" />
++    <MESSAGE value="fix: user 기능 (본인 확인 로직 추가)" />
++    <MESSAGE value="fix: folder alias 추가" />
++    <option name="LAST_COMMIT_MESSAGE" value="fix: folder alias 추가" />
+   </component>
+ </project>
+\ No newline at end of file

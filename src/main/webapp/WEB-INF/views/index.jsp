@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>StyleSnap - AI 기반 패션 추천</title>
+    <title>StyleZip - AI 기반 패션 추천</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 
 <nav class="navbar navbar-light bg-white sticky-top shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="${pageContext.request.contextPath}/">StyleSnap</a>
+        <a class="navbar-brand" href="${pageContext.request.contextPath}/">StyleZip</a>
         <div>
             <a href="${pageContext.request.contextPath}/chat/" title="AI 코디 추천" style="margin-left: 10px; margin-right: 5px; color: #333;">
                 <i class="fas fa-robot"></i>

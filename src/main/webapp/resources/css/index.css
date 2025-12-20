@@ -190,7 +190,7 @@ body {
 .shop-card img {
     width: 100%;
     max-width: 90px;
-    max-height: 30px;
+    max-height: 90px;
     aspect-ratio: 59/71;
     object-fit: cover;
     border-radius: 10px;
