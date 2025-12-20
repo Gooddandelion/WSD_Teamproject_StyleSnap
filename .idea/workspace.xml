@@ -9,26 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="feat: add index page">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__12__11___8_10_________Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__12__11__오후_8_10,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__12__12___10_21_________Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__12__12___11_33_________Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__12__12__오전_10_21,_업데이트_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__12__12__오후_11_33,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch" beforeDir="false" />
+    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="feat: change logo">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/secret.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chat.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mypage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mypage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/view.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/write.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/write.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/signup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/view.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/view.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +29,7 @@
         <option value="CSS File" />
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -137,6 +124,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.controller" />
       <recent name="com.example.bean" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -278,7 +266,7 @@
       <workItem from="1765607395971" duration="6891000" />
       <workItem from="1765732643713" duration="3371000" />
       <workItem from="1766139536318" duration="10265000" />
-      <workItem from="1766205864745" duration="1593000" />
+      <workItem from="1766205864745" duration="4788000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setting project">
       <option name="closed" value="true" />
@@ -448,7 +436,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766153499941</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="feat: change logo">
+      <option name="closed" value="true" />
+      <created>1766212781641</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1766212781641</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +498,8 @@
     <MESSAGE value="fix: list.jsp (add filter)" />
     <MESSAGE value="feat: add user-edit page" />
     <MESSAGE value="feat: add index page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add index page" />
+    <MESSAGE value="feat: change logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: change logo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
