@@ -138,7 +138,7 @@ public class ChatController {
 
     private String callGeminiApi(String prompt) throws Exception {
         // [수정] this.apiKey 사용
-        String apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + this.apiKey;
+        String apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=" + this.apiKey;
 
         URL url = new URL(apiUrl);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();

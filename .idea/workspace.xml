@@ -9,12 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="feat: change logo">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/secret.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/ChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: change &amp; setting API key">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/secret.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/secret.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +262,7 @@
       <workItem from="1765607395971" duration="6891000" />
       <workItem from="1765732643713" duration="3371000" />
       <workItem from="1766139536318" duration="10265000" />
-      <workItem from="1766205864745" duration="4788000" />
+      <workItem from="1766205864745" duration="5262000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setting project">
       <option name="closed" value="true" />
@@ -444,7 +440,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766212781641</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fix: change &amp; setting API key">
+      <option name="closed" value="true" />
+      <created>1766249698092</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1766249698093</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +478,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changes" />
     <MESSAGE value="Update web.xml" />
     <MESSAGE value="feat: setting project" />
     <MESSAGE value="fix: add fileupload dependency" />
@@ -499,7 +502,8 @@
     <MESSAGE value="feat: add user-edit page" />
     <MESSAGE value="feat: add index page" />
     <MESSAGE value="feat: change logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: change logo" />
+    <MESSAGE value="fix: change &amp; setting API key" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: change &amp; setting API key" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
