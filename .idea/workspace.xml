@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: change &amp; setting API key" />
+    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: update pom.xml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +99,7 @@
     "Tomcat 서버.Tomcat 9.0.107.executor": "Run",
     "Tomcat 서버.Tomcat 9.0.111.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "develop에 #15개",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/dandelion/Documents/WebSeviceDevelopment/Team_project/src/main/webapp/resources/img/uploads",
     "list.type.of.created.stylesheet": "CSS",
