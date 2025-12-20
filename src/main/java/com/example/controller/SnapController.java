@@ -1,0 +1,214 @@
+package com.example.controller;
+
+import com.example.bean.SnapVO;
+import com.example.bean.UserVO;
+import com.example.dao.SnapDAO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+@Controller
+
+@RequestMapping("/snaps")
+public class SnapController {
+
+    @Autowired
+    public SnapDAO snapDAO;
+
+    @Autowired
+    private ServletContext servletContext;
+
+    @RequestMapping("/")
+    public String home() {
+        return "/snaps/list";
+    }
+
+    @GetMapping("/write")
+    public String writeSnap() {
+        return "/snaps/write";
+    }
+
+    @PostMapping("/write")
+    public String writeSnapOK(SnapVO snapVO,
+                              @RequestParam("coordFile") MultipartFile coordFile,
+                              @RequestParam("productFile") MultipartFile productFile,
+                              HttpSession httpSession) throws IOException {
+
+        UserVO loginUser = (UserVO) httpSession.getAttribute("loginUser");
+        if (loginUser == null) {
+            return "redirect:/users/login";
+        }
+
+        // 로그인한 유저의 id 사용
+        snapVO.setUser_id(loginUser.getUser_id());
+
+        // 업로드 경로 설정
+        String uploadPath = servletContext.getRealPath("/resources/img/uploads/");
+        File uploadDir = new File(uploadPath);
+        if (!uploadDir.exists()) {
+            uploadDir.mkdirs();
+        }
+
+        // 코디 이미지 저장
+        if (!coordFile.isEmpty()) {
+            String coordFileName = UUID.randomUUID() + "_" + coordFile.getOriginalFilename();
+            coordFile.transferTo(new File(uploadPath + coordFileName));
+            snapVO.setCoord_image("/resources/img/uploads/" + coordFileName);
+        }
+
+        // 상품 이미지 저장
+        if (!productFile.isEmpty()) {
+            String productFileName = UUID.randomUUID() + "_" + productFile.getOriginalFilename();
+            productFile.transferTo(new File(uploadPath + productFileName));
+            snapVO.setProduct_image("/resources/img/uploads/" + productFileName);
+        }
+
+        snapDAO.insertSnap(snapVO);
+
+        return "redirect:/snaps/";
+    }
+
+    @GetMapping("/list")
+    public String snapList(
+            @RequestParam(value = "category", required = false) String category,
+            @RequestParam(value = "style", required = false) String style,
+            @RequestParam(value = "color", required = false) String color,
+            @RequestParam(value = "sort", required = false, defaultValue = "latest") String sort,
+            Model model) {
+
+        // 필터 조건들을 Map에 담기
+        Map<String, Object> filterParams = new HashMap<>();
+        filterParams.put("category", category);
+        filterParams.put("style", style);
+        filterParams.put("color", color);
+        filterParams.put("sort", sort);
+
+        // DAO에 Map 전달 (필터링된 결과 받기)
+        model.addAttribute("list", snapDAO.getSnapList(filterParams));
+
+        return "/snaps/list";
+    }
+
+    @GetMapping("/view/{id}")
+    public String viewSnap(@PathVariable("id") int id, Model model) {
+        snapDAO.countSnap(id);
+        model.addAttribute("snap", snapDAO.getSnap(id));
+        return "/snaps/view";
+    }
+
+    // 1. 수정 페이지로 이동 (기존 데이터 들고 감)
+    @GetMapping("/edit/{id}")
+    public String editSnap(@PathVariable("id") int id, Model model, HttpSession session) {
+        UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+        if (loginUser == null) {
+            return "redirect:/users/login";
+        }
+
+        SnapVO snapVO = snapDAO.getSnap(id);
+
+        // 본인 글인지 확인
+        if (snapVO.getUser_id() != loginUser.getUser_id()) {
+            return "redirect:/snaps/list";  // 또는 에러 페이지
+        }
+
+        model.addAttribute("u", snapVO);
+        return "/snaps/edit";
+    }
+
+    // 2. 수정 완료 (DB 업데이트 후 목록으로 이동)
+    @PostMapping("/edit/ok")
+    public String editSnapOk(SnapVO snapVO,
+                             @RequestParam("coordFile") MultipartFile coordFile,
+                             @RequestParam("productFile") MultipartFile productFile,
+                             HttpSession session) throws IOException {
+
+        UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+        if (loginUser == null) {
+            return "redirect:/users/login";
+        }
+
+        // 기존 글 조회 후 본인 확인
+        SnapVO original = snapDAO.getSnap(snapVO.getSnap_id());
+        if (original.getUser_id() != loginUser.getUser_id()) {
+            return "redirect:/snaps/list";
+        }
+
+        String uploadPath = servletContext.getRealPath("/resources/img/uploads/");
+
+        if (!coordFile.isEmpty()) {
+            String coordFileName = UUID.randomUUID() + "_" + coordFile.getOriginalFilename();
+            coordFile.transferTo(new File(uploadPath + coordFileName));
+            snapVO.setCoord_image("/resources/img/uploads/" + coordFileName);
+        }
+
+        if (!productFile.isEmpty()) {
+            String productFileName = UUID.randomUUID() + "_" + productFile.getOriginalFilename();
+            productFile.transferTo(new File(uploadPath + productFileName));
+            snapVO.setProduct_image("/resources/img/uploads/" + productFileName);
+        }
+
+        snapDAO.updateSnap(snapVO);
+        return "redirect:/snaps/list";
+    }
+
+    // [추가] 좋아요 기능 (+ 폴더 생성 로직 포함)
+    @GetMapping("/like/{id}")
+    public String likeSnap(@PathVariable("id") int snap_id, HttpSession session) {
+        UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+
+        // 1. 로그인 안 했으면 로그인 창으로 튕기기
+        if (loginUser == null) {
+            return "redirect:/users/login";
+        }
+
+        // 2. 좋아요 수 증가 (DB 처리)
+        snapDAO.likeSnap(snap_id);
+
+        // 3. [보고서 요구사항] 실제 폴더 생성 (webapp/resources/likes/유저ID)
+        String userId = String.valueOf(loginUser.getUser_id());
+        String path = session.getServletContext().getRealPath("/resources/likes/" + userId);
+
+        File folder = new File(path);
+        if (!folder.exists()) {
+            boolean created = folder.mkdirs(); // 실제 폴더 생성
+            if(created) {
+                System.out.println("폴더 생성 성공: " + path);
+            }
+        }
+
+        // 4. 다시 원래 보던 상세 페이지로 돌아가기
+        return "redirect:/snaps/view/" + snap_id;
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteSnap(@PathVariable("id") int id, HttpSession session) {
+        UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+        if (loginUser == null) {
+            return "redirect:/users/login";
+        }
+
+        SnapVO snapVO = snapDAO.getSnap(id);
+
+        // 본인 글인지 확인
+        if (snapVO.getUser_id() != loginUser.getUser_id()) {
+            return "redirect:/snaps/list";
+        }
+
+        snapDAO.deleteSnap(id);
+        return "redirect:/snaps/list";
+    }
+}

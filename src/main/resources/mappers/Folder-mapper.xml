@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="folder">
+
+    <select id="getFolders" resultType="folder">
+        SELECT * FROM folders WHERE user_id = #{user_id} ORDER BY folder_id DESC
+    </select>
+
+    <insert id="addFolder" parameterType="folder">
+        INSERT INTO folders (user_id, folder_name)
+        VALUES (#{user_id}, #{folder_name})
+    </insert>
+
+    <insert id="saveSnap" parameterType="map">
+        INSERT INTO folder_snaps (folder_id, snap_id)
+        VALUES (#{folder_id}, #{snap_id})
+    </insert>
+
+    <select id="getSnapsByFolder" parameterType="int" resultType="snap">
+        SELECT s.* FROM snaps s
+                            JOIN folder_snaps fs ON s.snap_id = fs.snap_id
+        WHERE fs.folder_id = #{folder_id}
+        ORDER BY fs.saved_at DESC
+    </select>
+
+    <select id="getFolderName" parameterType="int" resultType="String">
+        SELECT folder_name FROM folders WHERE folder_id = #{folder_id}
+    </select>
+
+    <select id="checkDuplicate" parameterType="map" resultType="int">
+        SELECT COUNT(*) FROM folder_snaps
+        WHERE folder_id = #{folder_id} AND snap_id = #{snap_id}
+    </select>
+
+    <update id="renameFolder" parameterType="folder">
+        UPDATE folders
+        SET folder_name = #{folder_name}
+        WHERE folder_id = #{folder_id}
+    </update>
+
+    <delete id="removeSnap" parameterType="map">
+        DELETE FROM folder_snaps
+        WHERE folder_id = #{folder_id} AND snap_id = #{snap_id}
+    </delete>
+
+    <delete id="deleteSnapsByFolderId" parameterType="int">
+        DELETE FROM folder_snaps WHERE folder_id = #{folder_id}
+    </delete>
+
+    <delete id="deleteFolder" parameterType="int">
+        DELETE FROM folders WHERE folder_id = #{folder_id}
+    </delete>
+
+</mapper>

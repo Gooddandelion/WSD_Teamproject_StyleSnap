@@ -1,0 +1,601 @@
+Index: .idea/shelf/25__12__12__오전_10_21,_업데이트_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/25__12__12__오전_10_21,_업데이트_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch b/.idea/shelf/25__12__12__오전_10_21,_업데이트_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/25__12__12__오전_10_21,_업데이트_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch	(revision 060ef8e3857f640c80b36ee9a0eadaa60fdba41a)
++++ /dev/null	(revision 060ef8e3857f640c80b36ee9a0eadaa60fdba41a)
+@@ -1,181 +0,0 @@
+-Index: .idea/misc.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"FrameworkDetectionExcludesConfiguration\">\n    <file type=\"web\" url=\"file://$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MavenProjectsManager\">\n    <option name=\"originalFiles\">\n      <list>\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/misc.xml b/.idea/misc.xml
+---- a/.idea/misc.xml	(revision 27793593ebedc37e2c94278f7ffd8d4bfeaf3e34)
+-+++ b/.idea/misc.xml	(date 1765451464291)
+-@@ -11,7 +11,7 @@
+-       </list>
+-     </option>
+-   </component>
+--  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+-+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
+-     <output url="file://$PROJECT_DIR$/out" />
+-   </component>
+- </project>
+-\ No newline at end of file
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ArtifactsWorkspaceSettings\">\n    <artifacts-to-build>\n      <artifact name=\"Spring1:war exploded\" />\n    </artifacts-to-build>\n  </component>\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"29eb28b9-07cc-456a-b4b9-1766493d9aaf\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"spring-beans.schema\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;Gooddandelion&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/jerry10004/SpringProject.git&quot;,\n    &quot;accountId&quot;: &quot;5a3b2fc0-7353-4b87-a8e5-87b81c7d586e&quot;\n  }\n}</component>\n  <component name=\"LogFilters\">\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\n    <option name=\"FILTER_INFO\" value=\"true\" />\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\n    <option name=\"CUSTOM_FILTER\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 2\n}</component>\n  <component name=\"ProjectId\" id=\"2YOV8fjQsTakAJbhqPWXv9EMYPi\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"RunOnceActivity.git.unshallow\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"Tomcat 서버.Tomcat 9.0.107.executor\": \"Run\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"git-widget-placeholder\": \"develop\",\n    \"kotlin-language-version-configured\": \"true\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"project.structure.last.edited\": \"프로젝트\",\n    \"project.structure.proportion\": \"0.15\",\n    \"project.structure.side.proportion\": \"0.27471265\",\n    \"settings.editor.selected.configurable\": \"reference.projectsettings.compiler.javacompiler\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Tomcat 9.0.107\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 9.0.107\" ALTERNATIVE_JRE_ENABLED=\"false\" nameIsGenerated=\"true\">\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\n      <deployment>\n        <artifact name=\"Spring1:war exploded\">\n          <settings>\n            <option name=\"CONTEXT_PATH\" value=\"/Spring1_war_exploded\" />\n          </settings>\n        </artifact>\n      </deployment>\n      <server-settings>\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"9fc424c1-8737-49d5-a247-d2c750a5e990\" />\n      </server-settings>\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\n      <predefined_log_file id=\"Tomcat Manager\" />\n      <predefined_log_file id=\"Tomcat Host Manager\" />\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\n      <RunnerSettings RunnerId=\"Debug\">\n        <option name=\"DEBUG_PORT\" value=\"53972\" />\n      </RunnerSettings>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n        <option name=\"BuildArtifacts\" enabled=\"true\">\n          <artifact name=\"Spring1:war exploded\" />\n        </option>\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18\" />\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"29eb28b9-07cc-456a-b4b9-1766493d9aaf\" name=\"Changes\" comment=\"\" />\n      <created>1700396454596</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1700396454596</updated>\n      <workItem from=\"1700396455745\" duration=\"956000\" />\n      <workItem from=\"1765384564309\" duration=\"150000\" />\n      <workItem from=\"1765445731765\" duration=\"217000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 27793593ebedc37e2c94278f7ffd8d4bfeaf3e34)
+-+++ b/.idea/workspace.xml	(date 1765502440659)
+-@@ -27,25 +27,42 @@
+-     </option>
+-   </component>
+-   <component name="Git.Settings">
+-+    <favorite-branches>
+-+      <branch-storage>
+-+        <map>
+-+          <entry type="LOCAL">
+-+            <value>
+-+              <list>
+-+                <branch-info repo="$PROJECT_DIR$" source="develop" />
+-+              </list>
+-+            </value>
+-+          </entry>
+-+        </map>
+-+      </branch-storage>
+-+    </favorite-branches>
+-     <option name="RECENT_BRANCH_BY_REPOSITORY">
+-       <map>
+--        <entry key="$PROJECT_DIR$" value="main" />
+-+        <entry key="$PROJECT_DIR$" value="son" />
+-       </map>
+-     </option>
+-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-   </component>
+--  <component name="GitHubPullRequestSearchHistory">{
+--  &quot;lastFilter&quot;: {
+--    &quot;state&quot;: &quot;OPEN&quot;,
+--    &quot;assignee&quot;: &quot;Gooddandelion&quot;
+-+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+-+  "lastFilter": {
+-+    "state": "OPEN",
+-+    "assignee": "junhyoungSon"
+-   }
+--}</component>
+--  <component name="GithubPullRequestsUISettings">{
+--  &quot;selectedUrlAndAccountId&quot;: {
+--    &quot;url&quot;: &quot;https://github.com/jerry10004/SpringProject.git&quot;,
+--    &quot;accountId&quot;: &quot;5a3b2fc0-7353-4b87-a8e5-87b81c7d586e&quot;
+-+}]]></component>
+-+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+-+  "selectedUrlAndAccountId": {
+-+    "url": "https://github.com/Gooddandelion/WSD_Teamproject_StyleSnap.git",
+-+    "accountId": "3d83c317-1d8a-416d-854c-7c217dc1bda6"
+-   }
+--}</component>
+-+}]]></component>
+-+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+-+  <component name="KubernetesApiProvider"><![CDATA[{
+-+  "isMigrated": true
+-+}]]></component>
+-   <component name="LogFilters">
+-     <option name="FILTER_ERRORS" value="false" />
+-     <option name="FILTER_WARNINGS" value="false" />
+-@@ -56,11 +73,10 @@
+-   <component name="MarkdownSettingsMigration">
+-     <option name="stateVersion" value="1" />
+-   </component>
+--  <component name="ProjectColorInfo">{
+--  &quot;associatedIndex&quot;: 2
+--}</component>
+-+  <component name="ProjectColorInfo"><![CDATA[{
+-+  "associatedIndex": 8
+-+}]]></component>
+-   <component name="ProjectId" id="2YOV8fjQsTakAJbhqPWXv9EMYPi" />
+--  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+-   <component name="ProjectViewState">
+-     <option name="hideEmptyMiddlePackages" value="true" />
+-     <option name="showLibraryContents" value="true" />
+-@@ -69,12 +85,17 @@
+-   "keyToString": {
+-     "RunOnceActivity.OpenProjectViewOnStart": "true",
+-     "RunOnceActivity.ShowReadmeOnStart": "true",
+-+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+-     "RunOnceActivity.git.unshallow": "true",
+-     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+--    "Tomcat 서버.Tomcat 9.0.107.executor": "Run",
+-+    "Tomcat 서버.Tomcat 9.0.111.executor": "Run",
+-     "WebServerToolWindowFactoryState": "false",
+-     "git-widget-placeholder": "develop",
+-     "kotlin-language-version-configured": "true",
+-+    "node.js.detected.package.eslint": "true",
+-+    "node.js.detected.package.tslint": "true",
+-+    "node.js.selected.package.eslint": "(autodetect)",
+-+    "node.js.selected.package.tslint": "(autodetect)",
+-     "nodejs_package_manager_path": "npm",
+-     "project.structure.last.edited": "프로젝트",
+-     "project.structure.proportion": "0.15",
+-@@ -87,9 +108,22 @@
+-     <key name="MoveFile.RECENT_KEYS">
+-       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+-     </key>
+-+  </component>
+-+  <component name="RunDashboard">
+-+    <option name="configurationStatuses">
+-+      <map>
+-+        <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+-+          <value>
+-+            <map>
+-+              <entry key="Tomcat 9.0.111" value="STOPPED" />
+-+            </map>
+-+          </value>
+-+        </entry>
+-+      </map>
+-+    </option>
+-   </component>
+-   <component name="RunManager">
+--    <configuration name="Tomcat 9.0.107" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.107" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+-+    <configuration name="Tomcat 9.0.38" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.38" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+-       <option name="UPDATING_POLICY" value="restart-server" />
+-       <deployment>
+-         <artifact name="Spring1:war exploded">
+-@@ -99,7 +133,7 @@
+-         </artifact>
+-       </deployment>
+-       <server-settings>
+--        <option name="BASE_DIRECTORY_NAME" value="9fc424c1-8737-49d5-a247-d2c750a5e990" />
+-+        <option name="BASE_DIRECTORY_NAME" value="44441b3e-ea62-474f-b0d6-820fbad291a1" />
+-       </server-settings>
+-       <predefined_log_file enabled="true" id="Tomcat" />
+-       <predefined_log_file enabled="true" id="Tomcat Catalina" />
+-@@ -107,7 +141,7 @@
+-       <predefined_log_file id="Tomcat Host Manager" />
+-       <predefined_log_file id="Tomcat Localhost Access" />
+-       <RunnerSettings RunnerId="Debug">
+--        <option name="DEBUG_PORT" value="53972" />
+-+        <option name="DEBUG_PORT" value="50146" />
+-       </RunnerSettings>
+-       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+-         <option name="USE_ENV_VARIABLES" value="true" />
+-@@ -180,8 +214,8 @@
+-   <component name="SharedIndexes">
+-     <attachedChunks>
+-       <set>
+--        <option value="bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18" />
+--        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18" />
+-+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+-+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+-       </set>
+-     </attachedChunks>
+-   </component>
+-@@ -194,8 +228,7 @@
+-       <option name="presentableId" value="Default" />
+-       <updated>1700396454596</updated>
+-       <workItem from="1700396455745" duration="956000" />
+--      <workItem from="1765384564309" duration="150000" />
+--      <workItem from="1765445731765" duration="217000" />
+-+      <workItem from="1765451213091" duration="3809000" />
+-     </task>
+-     <servers />
+-   </component>
+Index: .idea/shelf/25__12__14__오후_4_45,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/25__12__14__오후_4_45,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch b/.idea/shelf/25__12__14__오후_4_45,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/25__12__14__오후_4_45,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch	(revision 060ef8e3857f640c80b36ee9a0eadaa60fdba41a)
++++ /dev/null	(revision 060ef8e3857f640c80b36ee9a0eadaa60fdba41a)
+@@ -1,241 +0,0 @@
+-Index: .idea/misc.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"FrameworkDetectionExcludesConfiguration\">\n    <file type=\"web\" url=\"file://$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MavenProjectsManager\">\n    <option name=\"originalFiles\">\n      <list>\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/misc.xml b/.idea/misc.xml
+---- a/.idea/misc.xml	(revision 07f20b2baf31ecf5114abff270083486ad0c5a19)
+-+++ b/.idea/misc.xml	(date 1765637498805)
+-@@ -11,7 +11,7 @@
+-       </list>
+-     </option>
+-   </component>
+--  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+-+  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="corretto-18" project-jdk-type="JavaSDK">
+-     <output url="file://$PROJECT_DIR$/out" />
+-   </component>
+- </project>
+-\ No newline at end of file
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ArtifactsWorkspaceSettings\">\n    <artifacts-to-build>\n      <artifact name=\"Spring1:war exploded\" />\n    </artifacts-to-build>\n  </component>\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"29eb28b9-07cc-456a-b4b9-1766493d9aaf\" name=\"Changes\" comment=\"fix: (User) update login.jsp\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"spring-beans.schema\" />\n        <option value=\"package-info\" />\n        <option value=\"Class\" />\n        <option value=\"Jsp File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"PREVIOUS_COMMIT_AUTHORS\">\n      <list>\n        <option value=\"Jang Soyeon &lt;jerry1004@handong.edu&gt;\" />\n      </list>\n    </option>\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"develop\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;Gooddandelion&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/Gooddandelion/WSD_Teamproject_StyleSnap.git&quot;,\n    &quot;accountId&quot;: &quot;5a3b2fc0-7353-4b87-a8e5-87b81c7d586e&quot;\n  }\n}</component>\n  <component name=\"KubernetesApiPersistence\">{}</component>\n  <component name=\"KubernetesApiProvider\">{\n  &quot;isMigrated&quot;: true\n}</component>\n  <component name=\"LogFilters\">\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\n    <option name=\"FILTER_INFO\" value=\"true\" />\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\n    <option name=\"CUSTOM_FILTER\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 2\n}</component>\n  <component name=\"ProjectId\" id=\"2YOV8fjQsTakAJbhqPWXv9EMYPi\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;Tomcat 서버.Tomcat 9.0.107.executor&quot;: &quot;Run&quot;,\n    &quot;Tomcat 서버.Tomcat 9.0.111.executor&quot;: &quot;Run&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;heonil&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.27471265&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps\" />\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources/mappers\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Tomcat 9.0.111\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 9.0.111\" ALTERNATIVE_JRE_ENABLED=\"false\" nameIsGenerated=\"true\">\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\n      <deployment>\n        <artifact name=\"Spring1:war exploded\">\n          <settings>\n            <option name=\"CONTEXT_PATH\" value=\"/\" />\n          </settings>\n        </artifact>\n      </deployment>\n      <server-settings>\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"c1913eb3-d243-4f43-b650-4c59f89fe893\" />\n      </server-settings>\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\n      <predefined_log_file id=\"Tomcat Manager\" />\n      <predefined_log_file id=\"Tomcat Host Manager\" />\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\n      <RunnerSettings RunnerId=\"Debug\">\n        <option name=\"DEBUG_PORT\" value=\"56528\" />\n      </RunnerSettings>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n        <option name=\"BuildArtifacts\" enabled=\"true\">\n          <artifact name=\"Spring1:war exploded\" />\n        </option>\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18\" />\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"29eb28b9-07cc-456a-b4b9-1766493d9aaf\" name=\"Changes\" comment=\"\" />\n      <created>1700396454596</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1700396454596</updated>\n      <workItem from=\"1700396455745\" duration=\"956000\" />\n      <workItem from=\"1765384564309\" duration=\"150000\" />\n      <workItem from=\"1765445731765\" duration=\"5957000\" />\n      <workItem from=\"1765472768743\" duration=\"324000\" />\n      <workItem from=\"1765607395971\" duration=\"6891000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"feat: setting project\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765450701940</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765450701940</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"fix: add fileupload dependency\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765503995848</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765503995848</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"fix: fix conflict\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765606002302</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765606002302</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"fix: fix conflict (DB connection)\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765607339542</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765607339542</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"fix: update edit form ( 사진 누락 문제 해결 )\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765608176331</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765608176331</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"feat: add view.jsp\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765608191337</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765608191337</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"feat: add view_count function\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765626617346</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765626617347</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"feat: (User) create UserVO\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765627004314</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765627004314</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"feat: (User) create User-mapper.xml\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765627173997</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765627173997</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"feat: (User) create UserDAO\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765627531296</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765627531296</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"feat: (User) create login.jsp\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765631487808</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765631487808</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"feat: (User) create login.jsp\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765631517725</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765631517725</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"fix: (User) update login.jsp\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765631844431</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765631844431</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"14\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Changes\" />\n    <MESSAGE value=\"Update web.xml\" />\n    <MESSAGE value=\"feat: setting project\" />\n    <MESSAGE value=\"fix: add fileupload dependency\" />\n    <MESSAGE value=\"fix: fix conflict\" />\n    <MESSAGE value=\"fix: fix conflict (DB connection)\" />\n    <MESSAGE value=\"fix: update edit form ( 사진 누락 문제 해결 )\" />\n    <MESSAGE value=\"feat: add view.jsp\" />\n    <MESSAGE value=\"feat: add view_count function\" />\n    <MESSAGE value=\"feat: (User) create UserVO\" />\n    <MESSAGE value=\"feat: (User) create User-mapper.xml\" />\n    <MESSAGE value=\"feat: (User) create UserDAO\" />\n    <MESSAGE value=\"feat: (User) create signup.jsp\" />\n    <MESSAGE value=\"feat: (User) create signup.jsp\" />\n    <MESSAGE value=\"feat: (User) create login.jsp\" />\n    <MESSAGE value=\"fix: (User) update login.jsp\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"fix: (User) update login.jsp\" />\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 07f20b2baf31ecf5114abff270083486ad0c5a19)
+-+++ b/.idea/workspace.xml	(date 1765689538946)
+-@@ -9,10 +9,9 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="fix: (User) update login.jsp">
+-+    <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="feat: implement controller logic for MyPage and folder detail view">
+-+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/SnapController.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -49,12 +48,12 @@
+-     &quot;assignee&quot;: &quot;Gooddandelion&quot;
+-   }
+- }</component>
+--  <component name="GithubPullRequestsUISettings">{
+--  &quot;selectedUrlAndAccountId&quot;: {
+--    &quot;url&quot;: &quot;https://github.com/Gooddandelion/WSD_Teamproject_StyleSnap.git&quot;,
+--    &quot;accountId&quot;: &quot;5a3b2fc0-7353-4b87-a8e5-87b81c7d586e&quot;
+--  }
+--}</component>
+-+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+-+  "selectedUrlAndAccountId": {
+-+    "url": "https://github.com/Gooddandelion/WSD_Teamproject_StyleSnap.git",
+-+    "accountId": "3d83c317-1d8a-416d-854c-7c217dc1bda6"
+-+  }
+-+}]]></component>
+-   <component name="KubernetesApiPersistence">{}</component>
+-   <component name="KubernetesApiProvider">{
+-   &quot;isMigrated&quot;: true
+-@@ -73,40 +72,56 @@
+-   &quot;associatedIndex&quot;: 2
+- }</component>
+-   <component name="ProjectId" id="2YOV8fjQsTakAJbhqPWXv9EMYPi" />
+--  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+-+  <component name="ProjectLevelVcsManager">
+-+    <ConfirmationsSetting value="2" id="Add" />
+-+  </component>
+-   <component name="ProjectViewState">
+-     <option name="hideEmptyMiddlePackages" value="true" />
+-     <option name="showLibraryContents" value="true" />
+-   </component>
+--  <component name="PropertiesComponent">{
+--  &quot;keyToString&quot;: {
+--    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+--    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+--    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+--    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+--    &quot;Tomcat 서버.Tomcat 9.0.107.executor&quot;: &quot;Run&quot;,
+--    &quot;Tomcat 서버.Tomcat 9.0.111.executor&quot;: &quot;Run&quot;,
+--    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+--    &quot;git-widget-placeholder&quot;: &quot;heonil&quot;,
+--    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+--    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+--    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+--    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+--    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+--    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+--    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
+--    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+--    &quot;project.structure.side.proportion&quot;: &quot;0.27471265&quot;,
+--    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
+--    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+-+  <component name="PropertiesComponent"><![CDATA[{
+-+  "keyToString": {
+-+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-+    "RunOnceActivity.ShowReadmeOnStart": "true",
+-+    "RunOnceActivity.git.unshallow": "true",
+-+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-+    "Tomcat 서버.Tomcat 9.0.107.executor": "Run",
+-+    "Tomcat 서버.Tomcat 9.0.111.executor": "Run",
+-+    "WebServerToolWindowFactoryState": "false",
+-+    "git-widget-placeholder": "son",
+-+    "kotlin-language-version-configured": "true",
+-+    "node.js.detected.package.eslint": "true",
+-+    "node.js.detected.package.tslint": "true",
+-+    "node.js.selected.package.eslint": "(autodetect)",
+-+    "node.js.selected.package.tslint": "(autodetect)",
+-+    "nodejs_package_manager_path": "npm",
+-+    "project.structure.last.edited": "모듈",
+-+    "project.structure.proportion": "0.15",
+-+    "project.structure.side.proportion": "0.27471265",
+-+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+-+    "vue.rearranger.settings.migration": "true"
+-   }
+--}</component>
+-+}]]></component>
+-   <component name="RecentsManager">
+-     <key name="MoveFile.RECENT_KEYS">
+-       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps" />
+-       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+-       <recent name="$PROJECT_DIR$/src/main/resources/mappers" />
+-     </key>
+-+  </component>
+-+  <component name="RunDashboard">
+-+    <option name="configurationStatuses">
+-+      <map>
+-+        <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+-+          <value>
+-+            <map>
+-+              <entry key="Tomcat 9.0.107" value="STOPPED" />
+-+              <entry key="Tomcat 9.0.111" value="STOPPED" />
+-+            </map>
+-+          </value>
+-+        </entry>
+-+      </map>
+-+    </option>
+-   </component>
+-   <component name="RunManager">
+-     <configuration name="Tomcat 9.0.111" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.111" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+-@@ -323,7 +338,79 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1765631844431</updated>
+-     </task>
+--    <option name="localTasksCounter" value="14" />
+-+    <task id="LOCAL-00014" summary="feat: add FolderVO class for bookmark feature">
+-+      <option name="closed" value="true" />
+-+      <created>1765687109618</created>
+-+      <option name="number" value="00014" />
+-+      <option name="presentableId" value="LOCAL-00014" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1765687109618</updated>
+-+    </task>
+-+    <task id="LOCAL-00015" summary="feat: implement FolderController for folder management and snap saving">
+-+      <option name="closed" value="true" />
+-+      <created>1765687139309</created>
+-+      <option name="number" value="00015" />
+-+      <option name="presentableId" value="LOCAL-00015" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1765687139309</updated>
+-+    </task>
+-+    <task id="LOCAL-00016" summary="feat: add SQL mapper for folder operations">
+-+      <option name="closed" value="true" />
+-+      <created>1765687168109</created>
+-+      <option name="number" value="00016" />
+-+      <option name="presentableId" value="LOCAL-00016" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1765687168109</updated>
+-+    </task>
+-+    <task id="LOCAL-00017" summary="feat: add save functionality and modal logic to view.jsp">
+-+      <option name="closed" value="true" />
+-+      <created>1765688152926</created>
+-+      <option name="number" value="00017" />
+-+      <option name="presentableId" value="LOCAL-00017" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1765688152926</updated>
+-+    </task>
+-+    <task id="LOCAL-00018" summary="feat: complete folder creation and snap save feature">
+-+      <option name="closed" value="true" />
+-+      <created>1765688168102</created>
+-+      <option name="number" value="00018" />
+-+      <option name="presentableId" value="LOCAL-00018" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1765688168102</updated>
+-+    </task>
+-+    <task id="LOCAL-00019" summary="feat: add SQL queries to fetch snaps within a folder">
+-+      <option name="closed" value="true" />
+-+      <created>1765688278386</created>
+-+      <option name="number" value="00019" />
+-+      <option name="presentableId" value="LOCAL-00019" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1765688278386</updated>
+-+    </task>
+-+    <task id="LOCAL-00020" summary="feat: add endpoints for MyPage and folder detail view in FolderController">
+-+      <option name="closed" value="true" />
+-+      <created>1765688319171</created>
+-+      <option name="number" value="00020" />
+-+      <option name="presentableId" value="LOCAL-00020" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1765688319171</updated>
+-+    </task>
+-+    <task id="LOCAL-00021" summary="ui: create JSP pages for MyPage list and folder details">
+-+      <option name="closed" value="true" />
+-+      <created>1765688390638</created>
+-+      <option name="number" value="00021" />
+-+      <option name="presentableId" value="LOCAL-00021" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1765688390638</updated>
+-+    </task>
+-+    <task id="LOCAL-00022" summary="feat: implement controller logic for MyPage and folder detail view">
+-+      <option name="closed" value="true" />
+-+      <created>1765689352749</created>
+-+      <option name="number" value="00022" />
+-+      <option name="presentableId" value="LOCAL-00022" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1765689352749</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="23" />
+-     <servers />
+-   </component>
+-   <component name="TypeScriptGeneratedFilesManager">
+-@@ -357,6 +444,15 @@
+-     <MESSAGE value="feat: (User) create signup.jsp" />
+-     <MESSAGE value="feat: (User) create login.jsp" />
+-     <MESSAGE value="fix: (User) update login.jsp" />
+--    <option name="LAST_COMMIT_MESSAGE" value="fix: (User) update login.jsp" />
+-+    <MESSAGE value="feat: add FolderVO class for bookmark feature" />
+-+    <MESSAGE value="feat: implement FolderController for folder management and snap saving" />
+-+    <MESSAGE value="feat: add SQL mapper for folder operations" />
+-+    <MESSAGE value="feat: add save functionality and modal logic to view.jsp" />
+-+    <MESSAGE value="feat: complete folder creation and snap save feature" />
+-+    <MESSAGE value="feat: add SQL queries to fetch snaps within a folder" />
+-+    <MESSAGE value="feat: add endpoints for MyPage and folder detail view in FolderController" />
+-+    <MESSAGE value="ui: create JSP pages for MyPage list and folder details" />
+-+    <MESSAGE value="feat: implement controller logic for MyPage and folder detail view" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement controller logic for MyPage and folder detail view" />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/25__12__11__오후_8_10,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/25__12__11__오후_8_10,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch b/.idea/shelf/25__12__11__오후_8_10,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/25__12__11__오후_8_10,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch	(revision 060ef8e3857f640c80b36ee9a0eadaa60fdba41a)
++++ /dev/null	(revision 060ef8e3857f640c80b36ee9a0eadaa60fdba41a)
+@@ -1,86 +0,0 @@
+-Index: .idea/misc.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"FrameworkDetectionExcludesConfiguration\">\n    <file type=\"web\" url=\"file://$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MavenProjectsManager\">\n    <option name=\"originalFiles\">\n      <list>\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"corretto-11\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/misc.xml b/.idea/misc.xml
+---- a/.idea/misc.xml	(revision 7678ed71ed5d0fdd5e275d041edff85bcba76c52)
+-+++ b/.idea/misc.xml	(date 1765451414029)
+-@@ -11,7 +11,7 @@
+-       </list>
+-     </option>
+-   </component>
+--  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
+-+  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="corretto-18" project-jdk-type="JavaSDK">
+-     <output url="file://$PROJECT_DIR$/out" />
+-   </component>
+- </project>
+-\ No newline at end of file
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ArtifactsWorkspaceSettings\">\n    <artifacts-to-build>\n      <artifact name=\"Spring1:war exploded\" />\n    </artifacts-to-build>\n  </component>\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"29eb28b9-07cc-456a-b4b9-1766493d9aaf\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/encodings.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/example/HomeController.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"spring-beans.schema\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"LogFilters\">\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\n    <option name=\"FILTER_INFO\" value=\"true\" />\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\n    <option name=\"CUSTOM_FILTER\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2YOV8fjQsTakAJbhqPWXv9EMYPi\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"project.structure.last.edited\": \"Modules\",\n    \"project.structure.proportion\": \"0.15\",\n    \"project.structure.side.proportion\": \"0.27471265\",\n    \"settings.editor.selected.configurable\": \"reference.projectsettings.compiler.javacompiler\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Tomcat 9.0.38\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 9.0.38\" ALTERNATIVE_JRE_ENABLED=\"false\" nameIsGenerated=\"true\">\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\n      <deployment>\n        <artifact name=\"Spring1:war exploded\">\n          <settings>\n            <option name=\"CONTEXT_PATH\" value=\"/Spring1_war_exploded\" />\n          </settings>\n        </artifact>\n      </deployment>\n      <server-settings>\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"44441b3e-ea62-474f-b0d6-820fbad291a1\" />\n      </server-settings>\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\n      <predefined_log_file id=\"Tomcat Manager\" />\n      <predefined_log_file id=\"Tomcat Host Manager\" />\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\n      <RunnerSettings RunnerId=\"Debug\">\n        <option name=\"DEBUG_PORT\" value=\"50146\" />\n      </RunnerSettings>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n        <option name=\"BuildArtifacts\" enabled=\"true\">\n          <artifact name=\"Spring1:war exploded\" />\n        </option>\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"29eb28b9-07cc-456a-b4b9-1766493d9aaf\" name=\"Changes\" comment=\"\" />\n      <created>1700396454596</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1700396454596</updated>\n      <workItem from=\"1700396455745\" duration=\"956000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 7678ed71ed5d0fdd5e275d041edff85bcba76c52)
+-+++ b/.idea/workspace.xml	(date 1765451321348)
+-@@ -54,25 +54,25 @@
+-     <option name="hideEmptyMiddlePackages" value="true" />
+-     <option name="showLibraryContents" value="true" />
+-   </component>
+--  <component name="PropertiesComponent"><![CDATA[{
+--  "keyToString": {
+--    "RunOnceActivity.OpenProjectViewOnStart": "true",
+--    "RunOnceActivity.ShowReadmeOnStart": "true",
+--    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+--    "WebServerToolWindowFactoryState": "false",
+--    "project.structure.last.edited": "Modules",
+--    "project.structure.proportion": "0.15",
+--    "project.structure.side.proportion": "0.27471265",
+--    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+-+  <component name="PropertiesComponent">{
+-+  &quot;keyToString&quot;: {
+-+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+-+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-+    &quot;project.structure.side.proportion&quot;: &quot;0.27471265&quot;,
+-+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
+-   }
+--}]]></component>
+-+}</component>
+-   <component name="RecentsManager">
+-     <key name="MoveFile.RECENT_KEYS">
+-       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+-     </key>
+-   </component>
+-   <component name="RunManager">
+--    <configuration name="Tomcat 9.0.38" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.38" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+-+    <configuration name="Tomcat 9.0.111" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.111" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+-       <option name="UPDATING_POLICY" value="restart-server" />
+-       <deployment>
+-         <artifact name="Spring1:war exploded">
+-@@ -82,7 +82,7 @@
+-         </artifact>
+-       </deployment>
+-       <server-settings>
+--        <option name="BASE_DIRECTORY_NAME" value="44441b3e-ea62-474f-b0d6-820fbad291a1" />
+-+        <option name="BASE_DIRECTORY_NAME" value="45625738-d537-459e-8430-1902e09fee6d" />
+-       </server-settings>
+-       <predefined_log_file enabled="true" id="Tomcat" />
+-       <predefined_log_file enabled="true" id="Tomcat Catalina" />
+-@@ -90,7 +90,7 @@
+-       <predefined_log_file id="Tomcat Host Manager" />
+-       <predefined_log_file id="Tomcat Localhost Access" />
+-       <RunnerSettings RunnerId="Debug">
+--        <option name="DEBUG_PORT" value="50146" />
+-+        <option name="DEBUG_PORT" value="63795" />
+-       </RunnerSettings>
+-       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+-         <option name="USE_ENV_VARIABLES" value="true" />
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ArtifactsWorkspaceSettings\">\n    <artifacts-to-build>\n      <artifact name=\"Spring1:war exploded\" />\n    </artifacts-to-build>\n  </component>\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"29eb28b9-07cc-456a-b4b9-1766493d9aaf\" name=\"Changes\" comment=\"feat: list.css\">\n      <change afterPath=\"$PROJECT_DIR$/src/main/webapp/resources/css/view.css\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/view.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/view.jsp\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"spring-beans.schema\" />\n        <option value=\"package-info\" />\n        <option value=\"Jsp File\" />\n        <option value=\"Class\" />\n        <option value=\"CSS File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"PREVIOUS_COMMIT_AUTHORS\">\n      <list>\n        <option value=\"Jang Soyeon &lt;jerry1004@handong.edu&gt;\" />\n      </list>\n    </option>\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"hotfix\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;Gooddandelion&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/Gooddandelion/WSD_Teamproject_StyleSnap.git&quot;,\n    &quot;accountId&quot;: &quot;5a3b2fc0-7353-4b87-a8e5-87b81c7d586e&quot;\n  },\n  &quot;recentNewPullRequestHead&quot;: {\n    &quot;server&quot;: {\n      &quot;useHttp&quot;: false,\n      &quot;host&quot;: &quot;github.com&quot;,\n      &quot;port&quot;: null,\n      &quot;suffix&quot;: null\n    },\n    &quot;owner&quot;: &quot;Gooddandelion&quot;,\n    &quot;repository&quot;: &quot;WSD_Teamproject_StyleSnap&quot;\n  }\n}</component>\n  <component name=\"KubernetesApiPersistence\">{}</component>\n  <component name=\"KubernetesApiProvider\">{\n  &quot;isMigrated&quot;: true\n}</component>\n  <component name=\"LogFilters\">\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\n    <option name=\"FILTER_INFO\" value=\"true\" />\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\n    <option name=\"CUSTOM_FILTER\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 2\n}</component>\n  <component name=\"ProjectId\" id=\"2YOV8fjQsTakAJbhqPWXv9EMYPi\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"Maven.stylesnap [clean].executor\": \"Run\",\n    \"Maven.stylesnap [package].executor\": \"Run\",\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"RunOnceActivity.git.unshallow\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"Tomcat 서버.Tomcat 9.0.107.executor\": \"Run\",\n    \"Tomcat 서버.Tomcat 9.0.111.executor\": \"Run\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"git-widget-placeholder\": \"heonil에 #9개\",\n    \"kotlin-language-version-configured\": \"true\",\n    \"list.type.of.created.stylesheet\": \"CSS\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"project.structure.last.edited\": \"모듈\",\n    \"project.structure.proportion\": \"0.15\",\n    \"project.structure.side.proportion\": \"0.27471265\",\n    \"settings.editor.selected.configurable\": \"reference.projectsettings.compiler.javacompiler\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views\" />\n      <recent name=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources/mappers\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Tomcat 9.0.111\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 9.0.111\" ALTERNATIVE_JRE_ENABLED=\"false\" nameIsGenerated=\"true\">\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\n      <deployment>\n        <artifact name=\"Spring1:war exploded\">\n          <settings>\n            <option name=\"CONTEXT_PATH\" value=\"/\" />\n          </settings>\n        </artifact>\n      </deployment>\n      <server-settings>\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"c1913eb3-d243-4f43-b650-4c59f89fe893\" />\n      </server-settings>\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\n      <predefined_log_file id=\"Tomcat Manager\" />\n      <predefined_log_file id=\"Tomcat Host Manager\" />\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\n      <RunnerSettings RunnerId=\"Debug\">\n        <option name=\"DEBUG_PORT\" value=\"56528\" />\n      </RunnerSettings>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n        <option name=\"BuildArtifacts\" enabled=\"true\">\n          <artifact name=\"Spring1:war exploded\" />\n        </option>\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18\" />\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"29eb28b9-07cc-456a-b4b9-1766493d9aaf\" name=\"Changes\" comment=\"\" />\n      <created>1700396454596</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1700396454596</updated>\n      <workItem from=\"1700396455745\" duration=\"956000\" />\n      <workItem from=\"1765384564309\" duration=\"150000\" />\n      <workItem from=\"1765445731765\" duration=\"5957000\" />\n      <workItem from=\"1765472768743\" duration=\"324000\" />\n      <workItem from=\"1765607395971\" duration=\"6891000\" />\n      <workItem from=\"1765732643713\" duration=\"3371000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"feat: setting project\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765450701940</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765450701940</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"fix: add fileupload dependency\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765503995848</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765503995848</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"fix: fix conflict\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765606002302</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765606002302</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"fix: fix conflict (DB connection)\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765607339542</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765607339542</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"fix: update edit form ( 사진 누락 문제 해결 )\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765608176331</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765608176331</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"feat: add view.jsp\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765608191337</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765608191337</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"feat: add view_count function\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765626617346</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765626617347</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"feat: (User) create UserVO\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765627004314</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765627004314</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"feat: (User) create User-mapper.xml\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765627173997</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765627173997</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"feat: (User) create UserDAO\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765627531296</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765627531296</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"feat: (User) create login.jsp\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765631487808</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765631487808</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"feat: (User) create login.jsp\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765631517725</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765631517725</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"fix: (User) update login.jsp\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765631844431</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765631844431</updated>\n    </task>\n    <task id=\"LOCAL-00014\" summary=\"fix: pom.xml &#10;&#10;- Java 버전 1.8 → 17 업그레이드 (기획서 명세 반영)&#10;- groupId/artifactId를 stylesnap으로 변경&#10;- 의존성 버전 properties로 통합 관리\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765783886320</created>\n      <option name=\"number\" value=\"00014\" />\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765783886320</updated>\n    </task>\n    <task id=\"LOCAL-00015\" summary=\"fix: 오타 수정 &amp; 생성자 파라미터 수정\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765784427813</created>\n      <option name=\"number\" value=\"00015\" />\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765784427813</updated>\n    </task>\n    <task id=\"LOCAL-00016\" summary=\"fix: user 기능 (본인 확인 로직 추가)\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765784648053</created>\n      <option name=\"number\" value=\"00016\" />\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765784648053</updated>\n    </task>\n    <task id=\"LOCAL-00017\" summary=\"fix: folder alias 추가\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765784858782</created>\n      <option name=\"number\" value=\"00017\" />\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765784858782</updated>\n    </task>\n    <task id=\"LOCAL-00018\" summary=\"feat: add index.css\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765787409802</created>\n      <option name=\"number\" value=\"00018\" />\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765787409802</updated>\n    </task>\n    <task id=\"LOCAL-00019\" summary=\"feat: list.css\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1765788471108</created>\n      <option name=\"number\" value=\"00019\" />\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1765788471108</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"20\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"classroom/develop\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Changes\" />\n    <MESSAGE value=\"Update web.xml\" />\n    <MESSAGE value=\"feat: setting project\" />\n    <MESSAGE value=\"fix: add fileupload dependency\" />\n    <MESSAGE value=\"fix: fix conflict\" />\n    <MESSAGE value=\"fix: fix conflict (DB connection)\" />\n    <MESSAGE value=\"fix: update edit form ( 사진 누락 문제 해결 )\" />\n    <MESSAGE value=\"feat: add view.jsp\" />\n    <MESSAGE value=\"feat: add view_count function\" />\n    <MESSAGE value=\"feat: (User) create UserVO\" />\n    <MESSAGE value=\"feat: (User) create User-mapper.xml\" />\n    <MESSAGE value=\"feat: (User) create UserDAO\" />\n    <MESSAGE value=\"feat: (User) create signup.jsp\" />\n    <MESSAGE value=\"feat: (User) create signup.jsp\" />\n    <MESSAGE value=\"feat: (User) create login.jsp\" />\n    <MESSAGE value=\"fix: (User) update login.jsp\" />\n    <MESSAGE value=\"fix: pom.xml &#10;&#10;- Java 버전 1.8 → 17 업그레이드 (기획서 명세 반영)&#10;- groupId/artifactId를 stylesnap으로 변경&#10;- 의존성 버전 properties로 통합 관리\" />\n    <MESSAGE value=\"fix: 오타 수정 &amp; 생성자 파라미터 수정\" />\n    <MESSAGE value=\"fix: user 기능 (본인 확인 로직 추가)\" />\n    <MESSAGE value=\"fix: folder alias 추가\" />\n    <MESSAGE value=\"feat: add index.css\" />\n    <MESSAGE value=\"feat: list.css\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"feat: list.css\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b9a54792a09255a57dbfc07859e2d5d77de0c056)
++++ b/.idea/workspace.xml	(date 1766130120379)
+@@ -10,9 +10,10 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="29eb28b9-07cc-456a-b4b9-1766493d9aaf" name="Changes" comment="feat: list.css">
+-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/view.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__12__11__오후_8_10,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__12__12__오전_10_21,_업데이트_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__12__14__오후_4_45,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps/view.jsp" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -38,7 +39,7 @@
+     </option>
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="hotfix" />
++        <entry key="$PROJECT_DIR$" value="son" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -84,7 +85,9 @@
+   &quot;associatedIndex&quot;: 2
+ }</component>
+   <component name="ProjectId" id="2YOV8fjQsTakAJbhqPWXv9EMYPi" />
+-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++  <component name="ProjectLevelVcsManager">
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+@@ -100,7 +103,7 @@
+     "Tomcat 서버.Tomcat 9.0.107.executor": "Run",
+     "Tomcat 서버.Tomcat 9.0.111.executor": "Run",
+     "WebServerToolWindowFactoryState": "false",
+-    "git-widget-placeholder": "heonil에 #9개",
++    "git-widget-placeholder": "develop",
+     "kotlin-language-version-configured": "true",
+     "list.type.of.created.stylesheet": "CSS",
+     "node.js.detected.package.eslint": "true",
+@@ -121,6 +124,19 @@
+       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/snaps" />
+       <recent name="$PROJECT_DIR$/src/main/resources/mappers" />
+     </key>
++  </component>
++  <component name="RunDashboard">
++    <option name="configurationStatuses">
++      <map>
++        <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
++          <value>
++            <map>
++              <entry key="Tomcat 9.0.111" value="STOPPED" />
++            </map>
++          </value>
++        </entry>
++      </map>
++    </option>
+   </component>
+   <component name="RunManager">
+     <configuration name="Tomcat 9.0.111" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.111" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">

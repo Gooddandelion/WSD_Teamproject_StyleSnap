@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="user">
+
+    <!-- 회원가입 -->
+    <insert id="insertUser" parameterType="user">
+        INSERT INTO users (email, password, nickname)
+        VALUES (#{email}, #{password}, #{nickname})
+    </insert>
+
+    <!-- 로그인 (이메일+비밀번호로 조회) -->
+    <select id="login" parameterType="user" resultType="user">
+        SELECT * FROM users
+        WHERE email = #{email} AND password = #{password}
+    </select>
+
+    <!-- 이메일 중복 체크 -->
+    <select id="checkEmail" parameterType="String" resultType="int">
+        SELECT COUNT(*) FROM users WHERE email = #{email}
+    </select>
+
+    <!-- 닉네임 중복 체크 -->
+    <select id="checkNickname" parameterType="String" resultType="int">
+        SELECT COUNT(*) FROM users WHERE nickname = #{nickname}
+    </select>
+
+    <update id="updateUser" parameterType="com.example.bean.UserVO">
+        UPDATE users
+        SET nickname = #{nickname}
+        <if test="profile_image != null">
+            , profile_image = #{profile_image}
+        </if>
+        WHERE user_id = #{user_id}
+    </update>
+
+    <select id="getUser" resultType="com.example.bean.UserVO">
+        SELECT * FROM users WHERE user_id = #{user_id}
+    </select>
+
+</mapper>

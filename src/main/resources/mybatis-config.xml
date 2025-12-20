@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+        <typeAlias alias="snap" type="com.example.bean.SnapVO"/>
+        <typeAlias alias="user" type="com.example.bean.UserVO"/>
+        <typeAlias alias="folder" type="com.example.bean.FolderVO"/>
+    </typeAliases>
+</configuration>
